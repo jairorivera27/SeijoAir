@@ -1,0 +1,71 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<BaseLayout title="Movimiento de Aire">
+	<Header />
+	
+	<section style="background: linear-gradient(135deg, var(--primary-blue) 0%, var(--teal) 100%); color: var(--white); padding: 4rem 0;">
+		<div class="container">
+			<h1 class="section-title" style="color: var(--white);">Movimiento de Aire</h1>
+			<p class="section-subtitle" style="color: rgba(255,255,255,0.9);">Ventiladores, extractores y sistemas optimizados</p>
+		</div>
+	</section>
+	
+	<section>
+		<div class="container">
+			<div style="max-width: 900px; margin: 0 auto;">
+				<div style="margin-bottom: 3rem;">
+					<h2 style="font-size: 2rem; margin-bottom: 1.5rem; color: var(--primary-blue);">Ventiladores y Extractores</h2>
+					<p style="color: var(--gray-medium); line-height: 1.8; margin-bottom: 1rem;">
+						Ofrecemos servicios completos de selección, suministro e instalación de equipos de movimiento de aire:
+					</p>
+					<ul style="color: var(--gray-medium); line-height: 1.8; margin-left: 2rem; margin-bottom: 1.5rem;">
+						<li><strong>Selección técnica:</strong> Análisis de requerimientos, curvas de operación y eficiencia energética</li>
+						<li><strong>Tipos de equipos:</strong> Axiales, centrífugos, helicoidales, de techo, murales y especiales</li>
+						<li><strong>Suministro:</strong> Equipos de marcas reconocidas y fabricación propia según necesidades</li>
+						<li><strong>Instalación:</strong> Montaje profesional con soportes, conexiones y protecciones adecuadas</li>
+					</ul>
+				</div>
+				
+				<div style="margin-bottom: 3rem;">
+					<h2 style="font-size: 2rem; margin-bottom: 1.5rem; color: var(--primary-blue);">Balanceo y Comisionamiento</h2>
+					<p style="color: var(--gray-medium); line-height: 1.8; margin-bottom: 1rem;">
+						Servicios especializados para garantizar el rendimiento óptimo de los sistemas:
+					</p>
+					<ul style="color: var(--gray-medium); line-height: 1.8; margin-left: 2rem; margin-bottom: 1.5rem;">
+						<li><strong>Medición de caudales:</strong> Verificación de flujos de aire en cada punto de distribución</li>
+						<li><strong>Medición de presiones:</strong> Análisis de pérdidas de carga y presiones estáticas/dinámicas</li>
+						<li><strong>Balanceo de sistemas:</strong> Ajuste de compuertas y reguladores para distribución uniforme</li>
+						<li><strong>Comisionamiento:</strong> Pruebas de funcionamiento, verificación de parámetros de diseño y reportes técnicos</li>
+						<li><strong>Performance garantizada:</strong> Certificación de que el sistema opera según especificaciones de proyecto</li>
+					</ul>
+				</div>
+				
+				<div style="background: var(--gray-light); padding: 2rem; border-radius: 1rem; margin-top: 3rem;">
+					<h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--primary-blue);">Beneficios</h3>
+					<ul style="color: var(--gray-medium); line-height: 1.8; margin-left: 2rem;">
+						<li>Optimización del consumo energético</li>
+						<li>Distribución uniforme de aire</li>
+						<li>Cumplimiento de especificaciones de diseño</li>
+						<li>Documentación técnica completa</li>
+						<li>Garantía de rendimiento</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	<section style="background: var(--gray-light);">
+		<div class="container" style="text-align: center;">
+			<h2 style="font-size: 2rem; margin-bottom: 1rem;">¿Necesita equipos de movimiento de aire?</h2>
+			<p style="color: var(--gray-medium); margin-bottom: 2rem;">Contáctenos para selección técnica y cotización</p>
+			<a href="/contacto" class="btn btn-primary">Solicitar Cotización</a>
+		</div>
+	</section>
+	
+	<Footer />
+</BaseLayout>
+

@@ -1,0 +1,86 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<BaseLayout title="Purificación y Control de Contaminantes">
+	<Header />
+	
+	<section style="background: linear-gradient(135deg, var(--primary-blue) 0%, var(--teal) 100%); color: var(--white); padding: 4rem 0;">
+		<div class="container">
+			<h1 class="section-title" style="color: var(--white);">Purificación y Control de Contaminantes</h1>
+			<p class="section-subtitle" style="color: rgba(255,255,255,0.9);">Tecnología avanzada para aire limpio y seguro</p>
+		</div>
+	</section>
+	
+	<section>
+		<div class="container">
+			<div style="max-width: 900px; margin: 0 auto;">
+				<div style="margin-bottom: 3rem;">
+					<h2 style="font-size: 2rem; margin-bottom: 1.5rem; color: var(--primary-blue);">Filtración</h2>
+					<p style="color: var(--gray-medium); line-height: 1.8; margin-bottom: 1rem;">
+						Sistemas de filtración de múltiples etapas diseñados según normas internacionales para remoción eficiente de partículas:
+					</p>
+					<ul style="color: var(--gray-medium); line-height: 1.8; margin-left: 2rem; margin-bottom: 1.5rem;">
+						<li><strong>Prefiltros:</strong> Captura de partículas grandes, protección de filtros principales y extensión de vida útil</li>
+						<li><strong>Filtros de bolsa:</strong> Alta capacidad de retención para partículas medianas, ideal para aplicaciones industriales</li>
+						<li><strong>Filtros cartucho:</strong> Alta eficiencia en espacios compactos, excelente para partículas finas</li>
+						<li><strong>Filtros HEPA:</strong> Eficiencia del 99.97% para partículas de 0.3 micrones, esencial para salas limpias y aplicaciones críticas</li>
+					</ul>
+					<p style="color: var(--gray-medium); line-height: 1.8;">
+						Todos nuestros sistemas cumplen con normativas ASHRAE, ISO y otras aplicables según el sector.
+					</p>
+				</div>
+				
+				<div style="margin-bottom: 3rem;">
+					<h2 style="font-size: 2rem; margin-bottom: 1.5rem; color: var(--primary-blue);">Precipitadores Electrostáticos</h2>
+					<p style="color: var(--gray-medium); line-height: 1.8; margin-bottom: 1rem;">
+						Tecnología electrostática para el control eficiente de:
+					</p>
+					<ul style="color: var(--gray-medium); line-height: 1.8; margin-left: 2rem; margin-bottom: 1.5rem;">
+						<li>Humos y aerosoles grasos de procesos de cocción industrial</li>
+						<li>Partículas submicrónicas difíciles de capturar con filtración convencional</li>
+						<li>Emisiones de procesos de soldadura, corte y tratamiento térmico</li>
+						<li>Alta eficiencia con bajo consumo energético y mantenimiento reducido</li>
+					</ul>
+				</div>
+				
+				<div style="margin-bottom: 3rem;">
+					<h2 style="font-size: 2rem; margin-bottom: 1.5rem; color: var(--primary-blue);">Purificadores UVC</h2>
+					<p style="color: var(--gray-medium); line-height: 1.8; margin-bottom: 1rem;">
+						Sistemas de purificación mediante radiación ultravioleta para mejora de calidad de aire interior (CAI):
+					</p>
+					<ul style="color: var(--gray-medium); line-height: 1.8; margin-left: 2rem; margin-bottom: 1.5rem;">
+						<li>Inactivación de microorganismos (bacterias, virus, hongos)</li>
+						<li>Reducción de olores y compuestos orgánicos volátiles (VOC)</li>
+						<li>Integración en sistemas HVAC existentes o como unidades independientes</li>
+						<li>Mantenimiento mínimo y operación silenciosa</li>
+					</ul>
+				</div>
+				
+				<div style="background: var(--gray-light); padding: 2rem; border-radius: 1rem; margin-top: 3rem;">
+					<h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--primary-blue);">Aplicaciones</h3>
+					<ul style="color: var(--gray-medium); line-height: 1.8; margin-left: 2rem;">
+						<li>Industria manufacturera y procesos productivos</li>
+						<li>Cocinas comerciales e industriales</li>
+						<li>Hospitales y centros de salud</li>
+						<li>Laboratorios y salas limpias</li>
+						<li>Oficinas y espacios comerciales</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	<section style="background: var(--gray-light);">
+		<div class="container" style="text-align: center;">
+			<h2 style="font-size: 2rem; margin-bottom: 1rem;">¿Necesita un sistema de purificación?</h2>
+			<p style="color: var(--gray-medium); margin-bottom: 2rem;">Contáctenos para una evaluación y recomendación técnica</p>
+			<a href="/contacto" class="btn btn-primary">Solicitar Cotización</a>
+		</div>
+	</section>
+	
+	<Footer />
+</BaseLayout>
+

@@ -1,0 +1,84 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<BaseLayout title="HVAC & Confort Térmico">
+	<Header />
+	
+	<section style="background: linear-gradient(135deg, var(--primary-blue) 0%, var(--teal) 100%); color: var(--white); padding: 4rem 0;">
+		<div class="container">
+			<h1 class="section-title" style="color: var(--white);">HVAC & Confort Térmico</h1>
+			<p class="section-subtitle" style="color: rgba(255,255,255,0.9);">Soluciones completas de climatización y confort</p>
+		</div>
+	</section>
+	
+	<section>
+		<div class="container">
+			<div style="max-width: 900px; margin: 0 auto;">
+				<div style="margin-bottom: 3rem;">
+					<h2 style="font-size: 2rem; margin-bottom: 1.5rem; color: var(--primary-blue);">Aire Acondicionado</h2>
+					<p style="color: var(--gray-medium); line-height: 1.8; margin-bottom: 1rem;">
+						Sistemas de climatización adaptados a cada necesidad:
+					</p>
+					<ul style="color: var(--gray-medium); line-height: 1.8; margin-left: 2rem; margin-bottom: 1.5rem;">
+						<li><strong>Expansión directa:</strong> Sistemas split, multi-split y paquetes para aplicaciones comerciales y pequeñas industrias</li>
+						<li><strong>Chiller:</strong> Sistemas de agua helada para grandes edificios, centros comerciales e instalaciones industriales</li>
+						<li><strong>VRF (Variable Refrigerant Flow):</strong> Tecnología de última generación para máxima eficiencia y control zonal</li>
+						<li>Aplicaciones en oficinas, comercio, industria y espacios especializados</li>
+					</ul>
+				</div>
+				
+				<div style="margin-bottom: 3rem;">
+					<h2 style="font-size: 2rem; margin-bottom: 1.5rem; color: var(--primary-blue);">Distribución de Aire</h2>
+					<p style="color: var(--gray-medium); line-height: 1.8; margin-bottom: 1rem;">
+						Diseño e instalación de sistemas de distribución para confort uniforme:
+					</p>
+					<ul style="color: var(--gray-medium); line-height: 1.8; margin-left: 2rem; margin-bottom: 1.5rem;">
+						<li><strong>Difusores:</strong> Distribución uniforme de aire con diferentes patrones de descarga</li>
+						<li><strong>Rejillas:</strong> Retorno y suministro de aire con diseño estético y funcional</li>
+						<li><strong>Ductería:</strong> Diseño, fabricación e instalación de conductos optimizados para mínimas pérdidas</li>
+						<li>Cálculo de velocidades, presiones y distribución para evitar zonas de confort deficiente</li>
+					</ul>
+				</div>
+				
+				<div style="margin-bottom: 3rem;">
+					<h2 style="font-size: 2rem; margin-bottom: 1.5rem; color: var(--primary-blue);">Control y Automatización</h2>
+					<p style="color: var(--gray-medium); line-height: 1.8; margin-bottom: 1rem;">
+						Sistemas inteligentes para eficiencia energética y confort optimizado:
+					</p>
+					<ul style="color: var(--gray-medium); line-height: 1.8; margin-left: 2rem; margin-bottom: 1.5rem;">
+						<li><strong>Termostatos:</strong> Control individual de zonas con programación y ajuste remoto</li>
+						<li><strong>BMS (Building Management System):</strong> Integración completa de sistemas HVAC con monitoreo y control centralizado</li>
+						<li>Optimización energética mediante algoritmos de control avanzados</li>
+						<li>Monitoreo en tiempo real, alarmas y reportes de consumo</li>
+						<li>Integración con otros sistemas del edificio (iluminación, seguridad, etc.)</li>
+					</ul>
+				</div>
+				
+				<div style="background: var(--gray-light); padding: 2rem; border-radius: 1rem; margin-top: 3rem;">
+					<h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--primary-blue);">Ventajas de Nuestros Sistemas</h3>
+					<ul style="color: var(--gray-medium); line-height: 1.8; margin-left: 2rem;">
+						<li>Alta eficiencia energética y reducción de costos operativos</li>
+						<li>Confort térmico uniforme en todos los espacios</li>
+						<li>Control preciso de temperatura y humedad</li>
+						<li>Flexibilidad y escalabilidad según necesidades</li>
+						<li>Cumplimiento de normativas de eficiencia energética</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	<section style="background: var(--gray-light);">
+		<div class="container" style="text-align: center;">
+			<h2 style="font-size: 2rem; margin-bottom: 1rem;">¿Necesita un sistema HVAC?</h2>
+			<p style="color: var(--gray-medium); margin-bottom: 2rem;">Contáctenos para diseño, cotización e instalación</p>
+			<a href="/contacto" class="btn btn-primary">Solicitar Cotización</a>
+		</div>
+	</section>
+	
+	<Footer />
+</BaseLayout>
+

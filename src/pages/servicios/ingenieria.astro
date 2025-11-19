@@ -1,0 +1,85 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<BaseLayout title="Ingeniería de Proyectos">
+	<Header />
+	
+	<section style="background: linear-gradient(135deg, var(--primary-blue) 0%, var(--teal) 100%); color: var(--white); padding: 4rem 0;">
+		<div class="container">
+			<h1 class="section-title" style="color: var(--white);">Ingeniería de Proyectos</h1>
+			<p class="section-subtitle" style="color: rgba(255,255,255,0.9);">Diseño, cálculo y especificaciones técnicas</p>
+		</div>
+	</section>
+	
+	<section>
+		<div class="container">
+			<div style="max-width: 900px; margin: 0 auto;">
+				<div style="margin-bottom: 3rem;">
+					<h2 style="font-size: 2rem; margin-bottom: 1.5rem; color: var(--primary-blue);">Diseño y Cálculo</h2>
+					<p style="color: var(--gray-medium); line-height: 1.8; margin-bottom: 1rem;">
+						Servicios de ingeniería especializada para proyectos de sistemas de aire:
+					</p>
+					<ul style="color: var(--gray-medium); line-height: 1.8; margin-left: 2rem; margin-bottom: 1.5rem;">
+						<li><strong>Cargas térmicas:</strong> Cálculo preciso de ganancias y pérdidas de calor según ASHRAE y normativas aplicables</li>
+						<li><strong>Caudales:</strong> Determinación de tasas de ventilación y renovación de aire según ocupación y uso</li>
+						<li><strong>Pérdidas de presión:</strong> Análisis de pérdidas en ductos, filtros, accesorios y equipos</li>
+						<li>Análisis de cargas de contaminantes y requerimientos de extracción</li>
+						<li>Cálculo de eficiencia energética y consumo</li>
+					</ul>
+				</div>
+				
+				<div style="margin-bottom: 3rem;">
+					<h2 style="font-size: 2rem; margin-bottom: 1.5rem; color: var(--primary-blue);">Modelación y Selección</h2>
+					<p style="color: var(--gray-medium); line-height: 1.8; margin-bottom: 1rem;">
+						Optimización técnica y económica de sistemas:
+					</p>
+					<ul style="color: var(--gray-medium); line-height: 1.8; margin-left: 2rem; margin-bottom: 1.5rem;">
+						<li><strong>Selección de equipos:</strong> Ventiladores, extractores, unidades HVAC, filtros y componentes</li>
+						<li><strong>Diseño de ductos:</strong> Dimensionamiento, distribución y optimización de conductos</li>
+						<li><strong>Accesorios:</strong> Selección de compuertas, difusores, rejillas y elementos de control</li>
+						<li>Modelación computacional de flujos de aire (CFD) cuando se requiera</li>
+						<li>Análisis de alternativas técnicas y económicas</li>
+					</ul>
+				</div>
+				
+				<div style="margin-bottom: 3rem;">
+					<h2 style="font-size: 2rem; margin-bottom: 1.5rem; color: var(--primary-blue);">Planos y Especificaciones</h2>
+					<p style="color: var(--gray-medium); line-height: 1.8; margin-bottom: 1rem;">
+						Documentación técnica completa para ejecución de proyectos:
+					</p>
+					<ul style="color: var(--gray-medium); line-height: 1.8; margin-left: 2rem; margin-bottom: 1.5rem;">
+						<li><strong>Planos:</strong> Diagramas de distribución, isométricos, detalles de instalación y arquitectónicos</li>
+						<li><strong>Listas de materiales:</strong> Especificación detallada de equipos, materiales y componentes</li>
+						<li><strong>Memorias técnicas:</strong> Descripción de sistemas, criterios de diseño, cálculos y justificaciones</li>
+						<li>Especificaciones de instalación y montaje</li>
+						<li>Documentación para permisos y autorizaciones</li>
+					</ul>
+				</div>
+				
+				<div style="background: var(--gray-light); padding: 2rem; border-radius: 1rem; margin-top: 3rem;">
+					<h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--primary-blue);">Servicios Adicionales</h3>
+					<ul style="color: var(--gray-medium); line-height: 1.8; margin-left: 2rem;">
+						<li>Supervisión de obra y comisionamiento</li>
+						<li>Asesoría técnica durante construcción</li>
+						<li>Revisión y optimización de proyectos existentes</li>
+						<li>Estudios de factibilidad y viabilidad</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	<section style="background: var(--gray-light);">
+		<div class="container" style="text-align: center;">
+			<h2 style="font-size: 2rem; margin-bottom: 1rem;">¿Necesita servicios de ingeniería?</h2>
+			<p style="color: var(--gray-medium); margin-bottom: 2rem;">Contáctenos para consultoría y desarrollo de proyectos</p>
+			<a href="/contacto" class="btn btn-primary">Solicitar Consultoría</a>
+		</div>
+	</section>
+	
+	<Footer />
+</BaseLayout>
+

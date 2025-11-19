@@ -1,0 +1,101 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<BaseLayout title="Mantenimiento & Servicio">
+	<Header />
+	
+	<section style="background: linear-gradient(135deg, var(--primary-blue) 0%, var(--teal) 100%); color: var(--white); padding: 4rem 0;">
+		<div class="container">
+			<h1 class="section-title" style="color: var(--white);">Mantenimiento & Servicio</h1>
+			<p class="section-subtitle" style="color: rgba(255,255,255,0.9);">Mantenimiento preventivo, correctivo y certificaciones</p>
+		</div>
+	</section>
+	
+	<section>
+		<div class="container">
+			<div style="max-width: 900px; margin: 0 auto;">
+				<div style="margin-bottom: 3rem;">
+					<h2 style="font-size: 2rem; margin-bottom: 1.5rem; color: var(--primary-blue);">Mantenimiento Preventivo</h2>
+					<p style="color: var(--gray-medium); line-height: 1.8; margin-bottom: 1rem;">
+						Programas de mantenimiento planificado para garantizar operación óptima y prolongar vida útil:
+					</p>
+					<ul style="color: var(--gray-medium); line-height: 1.8; margin-left: 2rem; margin-bottom: 1.5rem;">
+						<li><strong>Limpieza:</strong> Limpieza de ductos, equipos, serpentines y componentes</li>
+						<li><strong>Cambio de filtros:</strong> Reemplazo programado según tipo y condiciones de operación</li>
+						<li><strong>Calibraciones:</strong> Ajuste y verificación de sensores, termostatos y controles</li>
+						<li>Lubricación de motores y componentes mecánicos</li>
+						<li>Inspección visual y verificación de funcionamiento</li>
+						<li>Programas personalizados según tipo de sistema y uso</li>
+					</ul>
+				</div>
+				
+				<div style="margin-bottom: 3rem;">
+					<h2 style="font-size: 2rem; margin-bottom: 1.5rem; color: var(--primary-blue);">Mantenimiento Correctivo</h2>
+					<p style="color: var(--gray-medium); line-height: 1.8; margin-bottom: 1rem;">
+						Reparación y solución de fallas en sistemas existentes:
+					</p>
+					<ul style="color: var(--gray-medium); line-height: 1.8; margin-left: 2rem; margin-bottom: 1.5rem;">
+						<li>Diagnóstico de fallas y problemas operativos</li>
+						<li>Reparación de equipos y componentes</li>
+						<li>Reemplazo de partes y piezas</li>
+						<li>Ajustes y puesta a punto</li>
+						<li>Servicio técnico especializado</li>
+					</ul>
+				</div>
+				
+				<div style="margin-bottom: 3rem;">
+					<h2 style="font-size: 2rem; margin-bottom: 1.5rem; color: var(--primary-blue);">Pruebas y Certificaciones</h2>
+					<p style="color: var(--gray-medium); line-height: 1.8; margin-bottom: 1rem;">
+						Servicios de medición, pruebas y certificación de sistemas:
+					</p>
+					<ul style="color: var(--gray-medium); line-height: 1.8; margin-left: 2rem; margin-bottom: 1.5rem;">
+						<li><strong>Reportes de caudal:</strong> Medición y documentación de flujos de aire</li>
+						<li><strong>Reportes de presión:</strong> Análisis de presiones estáticas y dinámicas</li>
+						<li><strong>Eficiencia:</strong> Evaluación de rendimiento y eficiencia energética</li>
+						<li>Balanceo de sistemas y ajuste de caudales</li>
+						<li>Certificaciones de cumplimiento normativo</li>
+						<li>Documentación técnica completa</li>
+					</ul>
+				</div>
+				
+				<div style="margin-bottom: 3rem;">
+					<h2 style="font-size: 2rem; margin-bottom: 1.5rem; color: var(--primary-blue);">Atención Prioritaria</h2>
+					<p style="color: var(--gray-medium); line-height: 1.8; margin-bottom: 1rem;">
+						Servicio de emergencia para fallas críticas:
+					</p>
+					<ul style="color: var(--gray-medium); line-height: 1.8; margin-left: 2rem; margin-bottom: 1.5rem;">
+						<li>Respuesta rápida a fallas en sistemas de ventilación</li>
+						<li>Emergencias en sistemas HVAC</li>
+						<li>Fallas críticas en sistemas de refrigeración y cuartos fríos</li>
+						<li>Disponibilidad 24/7 para clientes con contrato de servicio</li>
+					</ul>
+				</div>
+				
+				<div style="background: var(--gray-light); padding: 2rem; border-radius: 1rem; margin-top: 3rem;">
+					<h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--primary-blue);">Beneficios del Mantenimiento</h3>
+					<ul style="color: var(--gray-medium); line-height: 1.8; margin-left: 2rem;">
+						<li>Prolongación de vida útil de equipos</li>
+						<li>Reducción de costos de energía</li>
+						<li>Prevención de fallas costosas</li>
+						<li>Cumplimiento de garantías</li>
+						<li>Operación confiable y segura</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	<section style="background: var(--gray-light);">
+		<div class="container" style="text-align: center;">
+			<h2 style="font-size: 2rem; margin-bottom: 1rem;">¿Necesita mantenimiento o servicio?</h2>
+			<p style="color: var(--gray-medium); margin-bottom: 2rem;">Contáctenos para programar mantenimiento o atención de emergencias</p>
+			<a href="/contacto" class="btn btn-primary">Solicitar Servicio</a>
+		</div>
+	</section>
+	
+	<Footer />
+</BaseLayout>
+

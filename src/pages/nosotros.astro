@@ -1,0 +1,94 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout title="Nosotros">
+	<Header />
+	
+	<section style="background: linear-gradient(135deg, var(--primary-blue) 0%, var(--teal) 100%); color: var(--white); padding: 4rem 0;">
+		<div class="container">
+			<h1 class="section-title" style="color: var(--white);">Nosotros</h1>
+			<p class="section-subtitle" style="color: rgba(255,255,255,0.9);">Conozca más sobre Seijo Air y nuestro compromiso con la ingeniería del aire</p>
+		</div>
+	</section>
+	
+	<section>
+		<div class="container">
+			<div style="max-width: 900px; margin: 0 auto;">
+				<div style="margin-bottom: 3rem;">
+					<h2 style="font-size: 2rem; margin-bottom: 1.5rem; color: var(--primary-blue);">Nuestra Historia</h2>
+					<p style="color: var(--gray-medium); line-height: 1.8; margin-bottom: 1.5rem;">
+						Seijo Air nació con la visión de ser líder en soluciones de ingeniería del aire, ofreciendo servicios profesionales de alta calidad en ventilación, HVAC, refrigeración y calidad de aire interior. Con años de experiencia en el sector, nos especializamos en diseñar, instalar y mantener sistemas que garantizan el confort, la seguridad y la eficiencia energética.
+					</p>
+					<p style="color: var(--gray-medium); line-height: 1.8; margin-bottom: 1.5rem;">
+						Nuestro equipo de ingenieros y técnicos altamente capacitados trabaja con dedicación para brindar soluciones personalizadas que se adaptan a las necesidades específicas de cada cliente, desde pequeñas empresas hasta grandes complejos industriales.
+					</p>
+				</div>
+				
+				<div style="margin-bottom: 3rem;">
+					<h2 style="font-size: 2rem; margin-bottom: 1.5rem; color: var(--primary-blue);">Nuestra Misión</h2>
+					<p style="color: var(--gray-medium); line-height: 1.8; margin-bottom: 1.5rem;">
+						Proporcionar soluciones integrales de ingeniería del aire que mejoren la calidad de vida, la productividad y la seguridad en los espacios donde trabajamos, viviendo y operamos. Nos comprometemos a utilizar tecnología de vanguardia y mejores prácticas de la industria para superar las expectativas de nuestros clientes.
+					</p>
+				</div>
+				
+				<div style="margin-bottom: 3rem;">
+					<h2 style="font-size: 2rem; margin-bottom: 1.5rem; color: var(--primary-blue);">Nuestra Visión</h2>
+					<p style="color: var(--gray-medium); line-height: 1.8; margin-bottom: 1.5rem;">
+						Ser reconocidos como la empresa líder en ingeniería del aire en la región, destacándonos por nuestra innovación, excelencia técnica y compromiso con la sostenibilidad y eficiencia energética.
+					</p>
+				</div>
+				
+				<div style="margin-bottom: 3rem;">
+					<h2 style="font-size: 2rem; margin-bottom: 1.5rem; color: var(--primary-blue);">Nuestros Valores</h2>
+					<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 2rem;">
+						<div style="background: var(--gray-light); padding: 2rem; border-radius: 1rem;">
+							<h3 style="font-size: 1.25rem; margin-bottom: 1rem; color: var(--primary-blue);">Excelencia</h3>
+							<p style="color: var(--gray-medium); line-height: 1.6;">Buscamos la perfección en cada proyecto, desde el diseño hasta la ejecución y mantenimiento.</p>
+						</div>
+						<div style="background: var(--gray-light); padding: 2rem; border-radius: 1rem;">
+							<h3 style="font-size: 1.25rem; margin-bottom: 1rem; color: var(--primary-blue);">Innovación</h3>
+							<p style="color: var(--gray-medium); line-height: 1.6;">Adoptamos tecnologías emergentes y mejores prácticas para ofrecer soluciones de vanguardia.</p>
+						</div>
+						<div style="background: var(--gray-light); padding: 2rem; border-radius: 1rem;">
+							<h3 style="font-size: 1.25rem; margin-bottom: 1rem; color: var(--primary-blue);">Compromiso</h3>
+							<p style="color: var(--gray-medium); line-height: 1.6;">Nos comprometemos con nuestros clientes, cumpliendo plazos y superando expectativas.</p>
+						</div>
+						<div style="background: var(--gray-light); padding: 2rem; border-radius: 1rem;">
+							<h3 style="font-size: 1.25rem; margin-bottom: 1rem; color: var(--primary-blue);">Sostenibilidad</h3>
+							<p style="color: var(--gray-medium); line-height: 1.6;">Promovemos soluciones eficientes que reducen el impacto ambiental y optimizan el consumo energético.</p>
+						</div>
+					</div>
+				</div>
+				
+				<div style="margin-bottom: 3rem;">
+					<h2 style="font-size: 2rem; margin-bottom: 1.5rem; color: var(--primary-blue);">¿Por qué elegirnos?</h2>
+					<ul style="color: var(--gray-medium); line-height: 1.8; margin-left: 2rem; margin-bottom: 1.5rem;">
+						<li><strong>Experiencia comprobada:</strong> Años de experiencia en proyectos de diversos sectores industriales y comerciales</li>
+						<li><strong>Equipo especializado:</strong> Ingenieros y técnicos certificados con amplio conocimiento técnico</li>
+						<li><strong>Soluciones integrales:</strong> Desde el diseño hasta el mantenimiento, cubrimos todo el ciclo de vida del proyecto</li>
+						<li><strong>Tecnología de punta:</strong> Utilizamos equipos y sistemas de última generación</li>
+						<li><strong>Cumplimiento normativo:</strong> Garantizamos el cumplimiento de todas las normativas y estándares aplicables</li>
+						<li><strong>Atención personalizada:</strong> Cada proyecto es único y recibe atención especializada</li>
+						<li><strong>Soporte continuo:</strong> Servicio de mantenimiento y soporte técnico disponible</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	<section style="background: var(--gray-light);">
+		<div class="container" style="text-align: center;">
+			<h2 style="font-size: 2rem; margin-bottom: 1rem;">¿Listo para trabajar con nosotros?</h2>
+			<p style="color: var(--gray-medium); margin-bottom: 2rem;">Contáctenos y descubra cómo podemos ayudarle con sus necesidades de ingeniería del aire</p>
+			<a href="/contacto" class="btn btn-primary">Contactar Ahora</a>
+		</div>
+	</section>
+	
+	<Footer />
+</BaseLayout>
+
+
+

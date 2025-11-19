@@ -1,0 +1,242 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout title="Inicio">
+	<Header />
+	
+	<!-- Hero Section -->
+	<section style="background: linear-gradient(135deg, var(--primary-blue) 0%, var(--teal) 100%); color: var(--white); padding: 6rem 0; text-align: center;">
+		<div class="container">
+			<h1 style="font-size: 3.5rem; font-weight: 700; margin-bottom: 1.5rem; line-height: 1.2;">
+				Ingeniería en el Aire
+			</h1>
+			<p style="font-size: 1.5rem; margin-bottom: 2.5rem; opacity: 0.95; max-width: 800px; margin-left: auto; margin-right: auto;">
+				Soluciones profesionales en ventilación, HVAC, refrigeración y calidad de aire interior para su industria
+			</p>
+			<div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+				<a href="/servicios" class="btn btn-primary" style="background: var(--white); color: var(--primary-blue);">Nuestros Servicios</a>
+				<a href="/contacto" class="btn btn-secondary" style="border-color: var(--white); color: var(--white);">Contactar</a>
+			</div>
+		</div>
+	</section>
+	
+	<!-- Servicios Principales -->
+	<section>
+		<div class="container">
+			<h2 class="section-title" style="text-align: center;">Nuestros Servicios</h2>
+			<p class="section-subtitle" style="text-align: center;">Soluciones integrales para todas sus necesidades de ingeniería del aire</p>
+			
+			<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem;">
+				<a href="/servicios/ventilacion" style="text-decoration: none; color: inherit;">
+					<div style="background: var(--white); border-radius: 1rem; padding: 2rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; border: 1px solid var(--gray-light);">
+						<div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--primary-blue), var(--teal)); border-radius: 0.75rem; margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">💨</div>
+						<h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--gray-dark);">Ventilación y Extracción Industrial</h3>
+						<p style="color: var(--gray-medium); line-height: 1.6;">Extracción localizada, ventilación general, campanas y ductos para captación eficiente de contaminantes.</p>
+					</div>
+				</a>
+				
+				<a href="/servicios/purificacion" style="text-decoration: none; color: inherit;">
+					<div style="background: var(--white); border-radius: 1rem; padding: 2rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; border: 1px solid var(--gray-light);">
+						<div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--primary-blue), var(--teal)); border-radius: 0.75rem; margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">🌬️</div>
+						<h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--gray-dark);">Purificación y Control de Contaminantes</h3>
+						<p style="color: var(--gray-medium); line-height: 1.6;">Filtración avanzada, precipitadores electrostáticos y purificadores UVC para calidad de aire superior.</p>
+					</div>
+				</a>
+				
+				<a href="/servicios/movimiento-aire" style="text-decoration: none; color: inherit;">
+					<div style="background: var(--white); border-radius: 1rem; padding: 2rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; border: 1px solid var(--gray-light);">
+						<div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--primary-blue), var(--teal)); border-radius: 0.75rem; margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">🌀</div>
+						<h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--gray-dark);">Movimiento de Aire</h3>
+						<p style="color: var(--gray-medium); line-height: 1.6;">Ventiladores, extractores, balanceo y comisionamiento para garantizar performance óptima.</p>
+					</div>
+				</a>
+				
+				<a href="/servicios/hvac" style="text-decoration: none; color: inherit;">
+					<div style="background: var(--white); border-radius: 1rem; padding: 2rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; border: 1px solid var(--gray-light);">
+						<div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--primary-blue), var(--teal)); border-radius: 0.75rem; margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">❄️</div>
+						<h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--gray-dark);">HVAC & Confort Térmico</h3>
+						<p style="color: var(--gray-medium); line-height: 1.6;">Aire acondicionado, distribución de aire y sistemas de control para máximo confort y eficiencia energética.</p>
+					</div>
+				</a>
+				
+				<a href="/servicios/evaporativos" style="text-decoration: none; color: inherit;">
+					<div style="background: var(--white); border-radius: 1rem; padding: 2rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; border: 1px solid var(--gray-light);">
+						<div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--primary-blue), var(--teal)); border-radius: 0.75rem; margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">💧</div>
+						<h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--gray-dark);">Sistemas Evaporativos</h3>
+						<p style="color: var(--gray-medium); line-height: 1.6;">Enfriamiento evaporativo eficiente con bajo consumo energético para ambientes industriales.</p>
+					</div>
+				</a>
+				
+				<a href="/servicios/refrigeracion" style="text-decoration: none; color: inherit;">
+					<div style="background: var(--white); border-radius: 1rem; padding: 2rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; border: 1px solid var(--gray-light);">
+						<div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--primary-blue), var(--teal)); border-radius: 0.75rem; margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">🧊</div>
+						<h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--gray-dark);">Refrigeración Comercial & Cuartos Fríos</h3>
+						<p style="color: var(--gray-medium); line-height: 1.6;">Cámaras frigoríficas, sistemas de refrigeración y equipos comerciales para conservación y congelación.</p>
+					</div>
+				</a>
+				
+				<a href="/servicios/cai" style="text-decoration: none; color: inherit;">
+					<div style="background: var(--white); border-radius: 1rem; padding: 2rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; border: 1px solid var(--gray-light);">
+						<div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--primary-blue), var(--teal)); border-radius: 0.75rem; margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">📊</div>
+						<h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--gray-dark);">Calidad de Aire Interior (CAI)</h3>
+						<p style="color: var(--gray-medium); line-height: 1.6;">Diagnóstico, medición y planes de mejora para cumplimiento de normas y estándares de calidad.</p>
+					</div>
+				</a>
+			</div>
+			
+			<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem;">
+				<a href="/servicios/ingenieria" style="text-decoration: none; color: inherit;">
+					<div style="background: var(--white); border-radius: 1rem; padding: 2rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; border: 1px solid var(--gray-light);">
+						<div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--primary-blue), var(--teal)); border-radius: 0.75rem; margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">🔧</div>
+						<h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--gray-dark);">Ingeniería de Proyectos</h3>
+						<p style="color: var(--gray-medium); line-height: 1.6;">Diseño, cálculo, modelación y especificaciones técnicas para proyectos llave en mano.</p>
+					</div>
+				</a>
+				
+				<a href="/servicios/mantenimiento" style="text-decoration: none; color: inherit;">
+					<div style="background: var(--white); border-radius: 1rem; padding: 2rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; border: 1px solid var(--gray-light);">
+						<div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--primary-blue), var(--teal)); border-radius: 0.75rem; margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">🛠️</div>
+						<h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--gray-dark);">Mantenimiento & Servicio</h3>
+						<p style="color: var(--gray-medium); line-height: 1.6;">Mantenimiento preventivo y correctivo, pruebas, certificaciones y atención prioritaria.</p>
+					</div>
+				</a>
+				
+				<a href="/servicios/seguridad" style="text-decoration: none; color: inherit;">
+					<div style="background: var(--white); border-radius: 1rem; padding: 2rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; border: 1px solid var(--gray-light);">
+						<div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--primary-blue), var(--teal)); border-radius: 0.75rem; margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">🛡️</div>
+						<h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--gray-dark);">Seguridad y Control de Olores</h3>
+						<p style="color: var(--gray-medium); line-height: 1.6;">Captación de olores y gases, filtros de carbón y sistemas especiales para cocinas y laboratorios.</p>
+					</div>
+				</a>
+			</div>
+		</div>
+	</section>
+	
+	<!-- Estadísticas -->
+	<section style="background: linear-gradient(135deg, var(--primary-blue) 0%, var(--teal) 100%); color: var(--white); padding: 4rem 0;">
+		<div class="container">
+			<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 3rem; text-align: center;">
+				<div>
+					<div style="font-size: 4rem; font-weight: 700; margin-bottom: 0.5rem; line-height: 1;">500+</div>
+					<p style="font-size: 1.2rem; opacity: 0.95;">Proyectos Completados</p>
+				</div>
+				<div>
+					<div style="font-size: 4rem; font-weight: 700; margin-bottom: 0.5rem; line-height: 1;">98%</div>
+					<p style="font-size: 1.2rem; opacity: 0.95;">Clientes Satisfechos</p>
+				</div>
+				<div>
+					<div style="font-size: 4rem; font-weight: 700; margin-bottom: 0.5rem; line-height: 1;">15+</div>
+					<p style="font-size: 1.2rem; opacity: 0.95;">Años de Experiencia</p>
+				</div>
+				<div>
+					<div style="font-size: 4rem; font-weight: 700; margin-bottom: 0.5rem; line-height: 1;">50+</div>
+					<p style="font-size: 1.2rem; opacity: 0.95;">Profesionales Certificados</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	<!-- Testimonios Destacados -->
+	<section>
+		<div class="container">
+			<h2 class="section-title" style="text-align: center;">Lo que dicen nuestros clientes</h2>
+			<p class="section-subtitle" style="text-align: center;">Testimonios de empresas que confían en nosotros</p>
+			
+			<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; margin-top: 3rem;">
+				<div style="background: var(--white); border-radius: 1rem; padding: 2rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border: 1px solid var(--gray-light);">
+					<div style="color: var(--teal); font-size: 1.5rem; margin-bottom: 1rem;">⭐⭐⭐⭐⭐</div>
+					<p style="color: var(--gray-medium); line-height: 1.8; margin-bottom: 1.5rem; font-style: italic;">
+						"Excelente trabajo en la instalación del sistema de ventilación. El equipo fue profesional y el resultado superó nuestras expectativas."
+					</p>
+					<div style="display: flex; align-items: center; gap: 1rem;">
+						<div style="width: 50px; height: 50px; background: linear-gradient(135deg, var(--primary-blue), var(--teal)); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--white); font-weight: bold;">
+							JM
+						</div>
+						<div>
+							<h4 style="font-size: 1rem; color: var(--gray-dark);">Juan Martínez</h4>
+							<p style="color: var(--gray-medium); font-size: 0.9rem;">Director de Operaciones</p>
+						</div>
+					</div>
+				</div>
+				
+				<div style="background: var(--white); border-radius: 1rem; padding: 2rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border: 1px solid var(--gray-light);">
+					<div style="color: var(--teal); font-size: 1.5rem; margin-bottom: 1rem;">⭐⭐⭐⭐⭐</div>
+					<p style="color: var(--gray-medium); line-height: 1.8; margin-bottom: 1.5rem; font-style: italic;">
+						"El sistema HVAC VRF ha sido un éxito total. La eficiencia energética mejoró notablemente y el confort es excelente."
+					</p>
+					<div style="display: flex; align-items: center; gap: 1rem;">
+						<div style="width: 50px; height: 50px; background: linear-gradient(135deg, var(--teal), var(--primary-blue-light)); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--white); font-weight: bold;">
+							CR
+						</div>
+						<div>
+							<h4 style="font-size: 1rem; color: var(--gray-dark);">Carolina Rodríguez</h4>
+							<p style="color: var(--gray-medium); font-size: 0.9rem;">Gerente General</p>
+						</div>
+					</div>
+				</div>
+				
+				<div style="background: var(--white); border-radius: 1rem; padding: 2rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border: 1px solid var(--gray-light);">
+					<div style="color: var(--teal); font-size: 1.5rem; margin-bottom: 1rem;">⭐⭐⭐⭐⭐</div>
+					<p style="color: var(--gray-medium); line-height: 1.8; margin-bottom: 1.5rem; font-style: italic;">
+						"Los cuartos fríos funcionan perfectamente. El servicio de mantenimiento preventivo ha sido clave para mantener la operación sin interrupciones."
+					</p>
+					<div style="display: flex; align-items: center; gap: 1rem;">
+						<div style="width: 50px; height: 50px; background: linear-gradient(135deg, var(--primary-blue-dark), var(--teal-light)); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--white); font-weight: bold;">
+							AL
+						</div>
+						<div>
+							<h4 style="font-size: 1rem; color: var(--gray-dark);">Andrés López</h4>
+							<p style="color: var(--gray-medium); font-size: 0.9rem;">Director Logístico</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div style="text-align: center; margin-top: 2rem;">
+				<a href="/testimonios" class="btn btn-secondary">Ver más testimonios</a>
+			</div>
+		</div>
+	</section>
+	
+	<!-- Por qué elegirnos -->
+	<section>
+		<div class="container">
+			<h2 class="section-title" style="text-align: center;">¿Por qué elegir Seijo Air?</h2>
+			<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 3rem;">
+				<div style="text-align: center;">
+					<div style="font-size: 3rem; margin-bottom: 1rem;">🎯</div>
+					<h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Experiencia Comprobada</h3>
+					<p style="color: var(--gray-medium);">Años de experiencia en ingeniería del aire para diversos sectores industriales.</p>
+				</div>
+				<div style="text-align: center;">
+					<div style="font-size: 3rem; margin-bottom: 1rem;">⚡</div>
+					<h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Soluciones Eficientes</h3>
+					<p style="color: var(--gray-medium);">Tecnología de punta para máxima eficiencia energética y rendimiento.</p>
+				</div>
+				<div style="text-align: center;">
+					<div style="font-size: 3rem; margin-bottom: 1rem;">✅</div>
+					<h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Cumplimiento Normativo</h3>
+					<p style="color: var(--gray-medium);">Garantizamos el cumplimiento de todas las normas y estándares aplicables.</p>
+				</div>
+				<div style="text-align: center;">
+					<div style="font-size: 3rem; margin-bottom: 1rem;">🤝</div>
+					<h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Soporte Integral</h3>
+					<p style="color: var(--gray-medium);">Desde el diseño hasta el mantenimiento, acompañamos todo el ciclo del proyecto.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	<Footer />
+</BaseLayout>
+
+<style>
+	a > div:hover {
+		transform: translateY(-5px);
+		box-shadow: 0 8px 20px rgba(0,0,0,0.15) !important;
+	}
+</style>
+

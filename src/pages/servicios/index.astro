@@ -1,0 +1,102 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<BaseLayout title="Servicios">
+	<Header />
+	
+	<section style="background: linear-gradient(135deg, var(--primary-blue) 0%, var(--teal) 100%); color: var(--white); padding: 4rem 0; text-align: center;">
+		<div class="container">
+			<h1 class="section-title" style="color: var(--white);">Nuestros Servicios</h1>
+			<p class="section-subtitle" style="color: rgba(255,255,255,0.9);">Soluciones integrales en ingeniería del aire</p>
+		</div>
+	</section>
+	
+	<section>
+		<div class="container">
+			<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+				<a href="/servicios/ventilacion" style="text-decoration: none; color: inherit;">
+					<div style="background: var(--white); border-radius: 1rem; padding: 2rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border: 1px solid var(--gray-light); transition: transform 0.3s;">
+						<h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--primary-blue);">1. Ventilación y Extracción Industrial</h3>
+						<p style="color: var(--gray-medium);">Extracción localizada, ventilación general, campanas y ductos.</p>
+					</div>
+				</a>
+				
+				<a href="/servicios/purificacion" style="text-decoration: none; color: inherit;">
+					<div style="background: var(--white); border-radius: 1rem; padding: 2rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border: 1px solid var(--gray-light); transition: transform 0.3s;">
+						<h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--primary-blue);">2. Purificación y Control de Contaminantes</h3>
+						<p style="color: var(--gray-medium);">Filtración, precipitadores electrostáticos y purificadores UVC.</p>
+					</div>
+				</a>
+				
+				<a href="/servicios/movimiento-aire" style="text-decoration: none; color: inherit;">
+					<div style="background: var(--white); border-radius: 1rem; padding: 2rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border: 1px solid var(--gray-light); transition: transform 0.3s;">
+						<h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--primary-blue);">3. Movimiento de Aire</h3>
+						<p style="color: var(--gray-medium);">Ventiladores, extractores, balanceo y comisionamiento.</p>
+					</div>
+				</a>
+				
+				<a href="/servicios/hvac" style="text-decoration: none; color: inherit;">
+					<div style="background: var(--white); border-radius: 1rem; padding: 2rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border: 1px solid var(--gray-light); transition: transform 0.3s;">
+						<h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--primary-blue);">4. Confort Térmico (HVAC)</h3>
+						<p style="color: var(--gray-medium);">Aire acondicionado, distribución de aire y automatización.</p>
+					</div>
+				</a>
+				
+				<a href="/servicios/evaporativos" style="text-decoration: none; color: inherit;">
+					<div style="background: var(--white); border-radius: 1rem; padding: 2rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border: 1px solid var(--gray-light); transition: transform 0.3s;">
+						<h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--primary-blue);">5. Sistemas Evaporativos</h3>
+						<p style="color: var(--gray-medium);">Enfriamiento evaporativo con bajo consumo energético.</p>
+					</div>
+				</a>
+				
+				<a href="/servicios/refrigeracion" style="text-decoration: none; color: inherit;">
+					<div style="background: var(--white); border-radius: 1rem; padding: 2rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border: 1px solid var(--gray-light); transition: transform 0.3s;">
+						<h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--primary-blue);">6. Refrigeración Comercial & Cuartos Fríos</h3>
+						<p style="color: var(--gray-medium);">Cámaras frigoríficas, sistemas de refrigeración y equipos comerciales.</p>
+					</div>
+				</a>
+				
+				<a href="/servicios/cai" style="text-decoration: none; color: inherit;">
+					<div style="background: var(--white); border-radius: 1rem; padding: 2rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border: 1px solid var(--gray-light); transition: transform 0.3s;">
+						<h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--primary-blue);">7. Calidad de Aire Interior (CAI) & Cumplimiento</h3>
+						<p style="color: var(--gray-medium);">Diagnóstico, medición y planes de mejora CAI.</p>
+					</div>
+				</a>
+				
+				<a href="/servicios/ingenieria" style="text-decoration: none; color: inherit;">
+					<div style="background: var(--white); border-radius: 1rem; padding: 2rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border: 1px solid var(--gray-light); transition: transform 0.3s;">
+						<h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--primary-blue);">8. Ingeniería de Proyectos</h3>
+						<p style="color: var(--gray-medium);">Diseño, cálculo, modelación y especificaciones técnicas.</p>
+					</div>
+				</a>
+				
+				<a href="/servicios/mantenimiento" style="text-decoration: none; color: inherit;">
+					<div style="background: var(--white); border-radius: 1rem; padding: 2rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border: 1px solid var(--gray-light); transition: transform 0.3s;">
+						<h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--primary-blue);">9. Mantenimiento & Servicio</h3>
+						<p style="color: var(--gray-medium);">Mantenimiento preventivo, correctivo, pruebas y certificaciones.</p>
+					</div>
+				</a>
+				
+				<a href="/servicios/seguridad" style="text-decoration: none; color: inherit;">
+					<div style="background: var(--white); border-radius: 1rem; padding: 2rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border: 1px solid var(--gray-light); transition: transform 0.3s;">
+						<h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--primary-blue);">10. Seguridad y Control de Olores</h3>
+						<p style="color: var(--gray-medium);">Captación de olores/gases, filtros de carbón y sistemas especiales.</p>
+					</div>
+				</a>
+			</div>
+		</div>
+	</section>
+	
+	<Footer />
+</BaseLayout>
+
+<style>
+	a > div:hover {
+		transform: translateY(-5px);
+		box-shadow: 0 8px 20px rgba(0,0,0,0.15) !important;
+	}
+</style>
+

@@ -1,0 +1,101 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout title="Contacto">
+	<Header />
+	
+	<section style="background: linear-gradient(135deg, var(--primary-blue) 0%, var(--teal) 100%); color: var(--white); padding: 4rem 0;">
+		<div class="container">
+			<h1 class="section-title" style="color: var(--white);">Contacto</h1>
+			<p class="section-subtitle" style="color: rgba(255,255,255,0.9);">Estamos aquí para ayudarle con sus necesidades de ingeniería del aire</p>
+		</div>
+	</section>
+	
+	<section>
+		<div class="container">
+			<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; max-width: 1000px; margin: 0 auto;">
+				<div>
+					<h2 style="font-size: 2rem; margin-bottom: 2rem; color: var(--primary-blue);">Información de Contacto</h2>
+					
+					<div style="margin-bottom: 2rem;">
+						<h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color: var(--gray-dark);">Email</h3>
+						<p style="color: var(--gray-medium);">info@seijoair.com</p>
+					</div>
+					
+					<div style="margin-bottom: 2rem;">
+						<h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color: var(--gray-dark);">Teléfono</h3>
+						<p style="color: var(--gray-medium);">+52 (55) 1234-5678</p>
+					</div>
+					
+					<div style="margin-bottom: 2rem;">
+						<h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color: var(--gray-dark);">Horario de Atención</h3>
+						<p style="color: var(--gray-medium);">Lunes a Viernes: 8:00 AM - 6:00 PM<br />Sábados: 9:00 AM - 1:00 PM</p>
+					</div>
+					
+					<div>
+						<h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color: var(--gray-dark);">Emergencias</h3>
+						<p style="color: var(--gray-medium);">Servicio 24/7 para clientes con contrato de mantenimiento</p>
+					</div>
+				</div>
+				
+				<div>
+					<h2 style="font-size: 2rem; margin-bottom: 2rem; color: var(--primary-blue);">Envíenos un Mensaje</h2>
+					
+					<form style="display: flex; flex-direction: column; gap: 1.5rem;">
+						<div>
+							<label for="nombre" style="display: block; margin-bottom: 0.5rem; color: var(--gray-dark); font-weight: 500;">Nombre Completo *</label>
+							<input type="text" id="nombre" name="nombre" required style="width: 100%; padding: 0.75rem; border: 2px solid var(--gray-light); border-radius: 0.5rem; font-size: 1rem; transition: border-color 0.3s;" />
+						</div>
+						
+						<div>
+							<label for="email" style="display: block; margin-bottom: 0.5rem; color: var(--gray-dark); font-weight: 500;">Email *</label>
+							<input type="email" id="email" name="email" required style="width: 100%; padding: 0.75rem; border: 2px solid var(--gray-light); border-radius: 0.5rem; font-size: 1rem; transition: border-color 0.3s;" />
+						</div>
+						
+						<div>
+							<label for="telefono" style="display: block; margin-bottom: 0.5rem; color: var(--gray-dark); font-weight: 500;">Teléfono</label>
+							<input type="tel" id="telefono" name="telefono" style="width: 100%; padding: 0.75rem; border: 2px solid var(--gray-light); border-radius: 0.5rem; font-size: 1rem; transition: border-color 0.3s;" />
+						</div>
+						
+						<div>
+							<label for="servicio" style="display: block; margin-bottom: 0.5rem; color: var(--gray-dark); font-weight: 500;">Servicio de Interés</label>
+							<select id="servicio" name="servicio" style="width: 100%; padding: 0.75rem; border: 2px solid var(--gray-light); border-radius: 0.5rem; font-size: 1rem; transition: border-color 0.3s;">
+								<option value="">Seleccione un servicio</option>
+								<option value="ventilacion">Ventilación y Extracción Industrial</option>
+								<option value="purificacion">Purificación y Control de Contaminantes</option>
+								<option value="movimiento-aire">Movimiento de Aire</option>
+								<option value="hvac">HVAC & Confort Térmico</option>
+								<option value="evaporativos">Sistemas Evaporativos</option>
+								<option value="refrigeracion">Refrigeración Comercial & Cuartos Fríos</option>
+								<option value="cai">Calidad de Aire Interior (CAI)</option>
+								<option value="ingenieria">Ingeniería de Proyectos</option>
+								<option value="mantenimiento">Mantenimiento & Servicio</option>
+								<option value="seguridad">Seguridad y Control de Olores</option>
+							</select>
+						</div>
+						
+						<div>
+							<label for="mensaje" style="display: block; margin-bottom: 0.5rem; color: var(--gray-dark); font-weight: 500;">Mensaje *</label>
+							<textarea id="mensaje" name="mensaje" rows="5" required style="width: 100%; padding: 0.75rem; border: 2px solid var(--gray-light); border-radius: 0.5rem; font-size: 1rem; font-family: inherit; transition: border-color 0.3s; resize: vertical;"></textarea>
+						</div>
+						
+						<button type="submit" class="btn btn-primary" style="width: 100%;">Enviar Mensaje</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	<Footer />
+</BaseLayout>
+
+<style>
+	input:focus, select:focus, textarea:focus {
+		outline: none;
+		border-color: var(--primary-blue) !important;
+	}
+</style>
+

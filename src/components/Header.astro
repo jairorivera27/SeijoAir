@@ -1,0 +1,73 @@
+---
+const currentPath = Astro.url.pathname;
+---
+
+<header style="background: var(--white); box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000;">
+	<nav class="container" style="display: flex; justify-content: space-between; align-items: center; padding: 1rem 1.5rem;">
+		<a href="/" style="display: flex; align-items: center; text-decoration: none; color: var(--gray-dark);">
+			<img src="/seijo air.png" alt="Seijo Air Logo" style="height: 60px; width: auto;" />
+		</a>
+		
+		<button id="mobile-menu-toggle" style="display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--gray-dark);">
+			☰
+		</button>
+		
+		<ul id="nav-menu" style="display: flex; list-style: none; gap: 2rem; align-items: center;">
+			<li><a href="/" style="text-decoration: none; color: var(--gray-dark); font-weight: 500; transition: color 0.3s;" class:active={currentPath === '/'}>Inicio</a></li>
+			<li><a href="/nosotros" style="text-decoration: none; color: var(--gray-dark); font-weight: 500; transition: color 0.3s;" class:active={currentPath === '/nosotros'}>Nosotros</a></li>
+			<li><a href="/servicios" style="text-decoration: none; color: var(--gray-dark); font-weight: 500; transition: color 0.3s;" class:active={currentPath.startsWith('/servicios')}>Servicios</a></li>
+			<li><a href="/blog" style="text-decoration: none; color: var(--gray-dark); font-weight: 500; transition: color 0.3s;" class:active={currentPath === '/blog'}>Blog</a></li>
+			<li><a href="/contacto" style="text-decoration: none; color: var(--gray-dark); font-weight: 500; transition: color 0.3s;" class:active={currentPath === '/contacto'}>Contacto</a></li>
+			<li><a href="/contacto" class="btn btn-primary" style="text-decoration: none;">Cotizar</a></li>
+		</ul>
+	</nav>
+</header>
+
+<style>
+	#nav-menu a:hover {
+		color: var(--primary-blue);
+	}
+	
+	#nav-menu a.active {
+		color: var(--primary-blue);
+		border-bottom: 2px solid var(--primary-blue);
+		padding-bottom: 0.25rem;
+	}
+	
+	@media (max-width: 768px) {
+		#mobile-menu-toggle {
+			display: block !important;
+		}
+		
+		#nav-menu {
+			position: absolute;
+			top: 100%;
+			left: 0;
+			right: 0;
+			background: var(--white);
+			flex-direction: column;
+			padding: 1rem;
+			box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+			display: none;
+			gap: 1rem;
+		}
+		
+		#nav-menu.open {
+			display: flex;
+		}
+	}
+</style>
+
+<script>
+	document.addEventListener('DOMContentLoaded', () => {
+		const toggle = document.getElementById('mobile-menu-toggle');
+		const menu = document.getElementById('nav-menu');
+		
+		if (toggle && menu) {
+			toggle.addEventListener('click', () => {
+				menu.classList.toggle('open');
+			});
+		}
+	});
+</script>
+
