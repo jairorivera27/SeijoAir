@@ -2,9 +2,18 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+
+const pageTitle = "Purificación y Control de Contaminantes | Filtración y Precipitadores";
+const pageDescription = "Sistemas de purificación y control de contaminantes en Colombia. Filtración HEPA, precipitadores electrostáticos, purificadores UVC. Tecnología avanzada para aire limpio.";
+const pageKeywords = "purificación de aire, filtros HEPA, precipitadores electrostáticos, purificadores UVC, control de contaminantes, filtración de aire, Colombia";
 ---
 
-<BaseLayout title="Purificación y Control de Contaminantes">
+<BaseLayout 
+	title={pageTitle}
+	description={pageDescription}
+	keywords={pageKeywords}
+	canonical="/servicios/purificacion"
+>
 	<Header />
 	
 	<section style="background: linear-gradient(135deg, var(--primary-blue) 0%, var(--teal) 100%); color: var(--white); padding: 4rem 0;">

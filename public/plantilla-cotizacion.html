@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plantilla de Cotización - Seijo Air</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background: white;
+            color: #374151;
+            font-size: 12pt;
+        }
+        
+        .container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: white;
+            padding: 20mm;
+        }
+        
+        .header {
+            border-bottom: 3px solid #1e40af;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .header h1 {
+            color: #1e40af;
+            font-size: 28pt;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        
+        .header h2 {
+            color: #374151;
+            font-size: 18pt;
+            font-weight: normal;
+            margin-bottom: 5px;
+        }
+        
+        .header-info {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+            font-size: 10pt;
+            color: #6b7280;
+        }
+        
+        .client-section {
+            margin-bottom: 25px;
+            padding: 15px;
+            background: #f9fafb;
+            border-left: 4px solid #1e40af;
+        }
+        
+        .client-section h3 {
+            color: #1e40af;
+            font-size: 14pt;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        .client-section p {
+            margin: 5px 0;
+            font-size: 11pt;
+            color: #374151;
+        }
+        
+        .service-description {
+            margin: 20px 0;
+            padding: 15px;
+            background: #f0f9ff;
+            border-radius: 5px;
+        }
+        
+        .service-description h3 {
+            color: #1e40af;
+            font-size: 13pt;
+            margin-bottom: 10px;
+        }
+        
+        .service-description ul {
+            margin-left: 20px;
+            color: #374151;
+        }
+        
+        .service-description li {
+            margin: 5px 0;
+            font-size: 11pt;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 11pt;
+        }
+        
+        th {
+            background: #1e40af;
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: bold;
+            border: 1px solid #1e3a8a;
+        }
+        
+        td {
+            padding: 10px 12px;
+            border: 1px solid #e5e7eb;
+            color: #374151;
+        }
+        
+        tr:nth-child(even) {
+            background: #f9fafb;
+        }
+        
+        .text-right {
+            text-align: right;
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        .totals-section {
+            margin-top: 25px;
+            margin-left: auto;
+            width: 300px;
+        }
+        
+        .totals-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #e5e7eb;
+            font-size: 11pt;
+        }
+        
+        .totals-row.total {
+            border-top: 2px solid #1e40af;
+            border-bottom: 2px solid #1e40af;
+            font-weight: bold;
+            font-size: 14pt;
+            padding: 12px 0;
+            margin-top: 5px;
+            color: #1e40af;
+        }
+        
+        .totals-label {
+            color: #6b7280;
+        }
+        
+        .totals-value {
+            font-weight: 600;
+            color: #374151;
+        }
+        
+        .payment-info {
+            margin-top: 30px;
+            padding: 15px;
+            background: #fef3c7;
+            border-left: 4px solid #f59e0b;
+            border-radius: 5px;
+        }
+        
+        .payment-info p {
+            margin: 5px 0;
+            font-size: 11pt;
+            color: #92400e;
+        }
+        
+        .validity-note {
+            margin-top: 20px;
+            padding: 10px;
+            background: #fee2e2;
+            border-left: 4px solid #ef4444;
+            border-radius: 5px;
+            font-size: 10pt;
+            color: #991b1b;
+        }
+        
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px solid #e5e7eb;
+        }
+        
+        .footer-section {
+            margin-bottom: 15px;
+        }
+        
+        .footer-section h4 {
+            color: #1e40af;
+            font-size: 12pt;
+            margin-bottom: 5px;
+        }
+        
+        .footer-section p {
+            font-size: 10pt;
+            color: #6b7280;
+            margin: 3px 0;
+        }
+        
+        .signature {
+            margin-top: 40px;
+            text-align: right;
+        }
+        
+        .signature p {
+            margin: 5px 0;
+            font-size: 11pt;
+            color: #374151;
+        }
+        
+        @media print {
+            body {
+                background: white;
+            }
+            
+            .container {
+                padding: 15mm;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Encabezado -->
+        <div class="header">
+            <h1>Seijo Air</h1>
+            <h2>Cotización de Mantenimientos</h2>
+            <div class="header-info">
+                <span>Fecha: <strong id="fecha-cotizacion"></strong></span>
+                <span>Validez: 30 días</span>
+            </div>
+        </div>
+        
+        <!-- Datos del Cliente -->
+        <div class="client-section">
+            <h3>DATOS DEL CLIENTE</h3>
+            <p><strong>Nombre:</strong> <span id="cliente-nombre">[Nombre del Cliente]</span></p>
+            <p><strong>Dirección:</strong> <span id="cliente-direccion">[Dirección]</span></p>
+            <p><strong>Teléfono:</strong> <span id="cliente-telefono">[Teléfono]</span></p>
+        </div>
+        
+        <!-- Descripción del Servicio -->
+        <div class="service-description">
+            <h3>Mantenimiento Preventivo del Sistema de Extracción de Aire de Cocina</h3>
+            <p style="margin-bottom: 10px; font-weight: 600;">Incluye:</p>
+            <ul id="servicios-incluidos">
+                <li>Campana</li>
+                <li>Ventilador</li>
+                <li>Ducto (parte accesible)</li>
+                <li>Precipitador (si aplica)</li>
+            </ul>
+        </div>
+        
+        <!-- Tabla de Conceptos -->
+        <table id="tabla-conceptos">
+            <thead>
+                <tr>
+                    <th>Concepto</th>
+                    <th class="text-center">Cantidad</th>
+                    <th class="text-right">Precio Unitario</th>
+                    <th class="text-right">Total</th>
+                </tr>
+            </thead>
+            <tbody id="tabla-body">
+                <!-- Se llenará dinámicamente -->
+            </tbody>
+        </table>
+        
+        <!-- Totales -->
+        <div class="totals-section">
+            <div class="totals-row">
+                <span class="totals-label">Subtotal:</span>
+                <span class="totals-value" id="subtotal">$0</span>
+            </div>
+            <div class="totals-row">
+                <span class="totals-label">IVA (19%):</span>
+                <span class="totals-value" id="iva">$0</span>
+            </div>
+            <div class="totals-row total">
+                <span>TOTAL:</span>
+                <span id="total">$0</span>
+            </div>
+        </div>
+        
+        <!-- Información de Pago -->
+        <div class="payment-info">
+            <p><strong>Forma de pago:</strong> 50% Anticipo - 50% Contraentrega</p>
+        </div>
+        
+        <!-- Nota de Validez -->
+        <div class="validity-note">
+            <p><strong>Nota:</strong> Esta cotización tiene validez por 30 días calendario.</p>
+        </div>
+        
+        <!-- Pie de Página -->
+        <div class="footer">
+            <div class="footer-section">
+                <h4>Ejecutivo Comercial</h4>
+                <p id="ejecutivo-nombre">Jairo Perez</p>
+                <p id="ejecutivo-telefono">Tel: 323 2925373</p>
+            </div>
+            
+            <div class="signature">
+                <p>Atentamente,</p>
+                <p style="margin-top: 30px;"><strong>Seijo Air</strong></p>
+                <p>Ingeniería en el Aire</p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Establecer fecha actual
+        const fecha = new Date();
+        document.getElementById('fecha-cotizacion').textContent = fecha.toLocaleDateString('es-CO', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        });
+    </script>
+</body>
+</html>

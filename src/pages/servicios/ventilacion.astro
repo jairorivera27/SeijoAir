@@ -2,9 +2,18 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+
+const pageTitle = "Ventilación y Extracción Industrial | Sistemas de Extracción de Aire";
+const pageDescription = "Sistemas de ventilación y extracción industrial en Colombia. Extracción localizada, ventilación general, campanas y ductos para captación eficiente de contaminantes. Diseño e instalación profesional.";
+const pageKeywords = "ventilación industrial, extracción de aire, sistemas de extracción, campanas de extracción, ductos de ventilación, extracción localizada, ventilación general, Colombia";
 ---
 
-<BaseLayout title="Ventilación y Extracción Industrial">
+<BaseLayout 
+	title={pageTitle}
+	description={pageDescription}
+	keywords={pageKeywords}
+	canonical="/servicios/ventilacion"
+>
 	<Header />
 	
 	<section style="background: linear-gradient(135deg, var(--primary-blue) 0%, var(--teal) 100%); color: var(--white); padding: 4rem 0;">

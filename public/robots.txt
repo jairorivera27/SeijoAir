@@ -1,0 +1,22 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://seijoair.com/sitemap-index.xml
+Sitemap: https://seijoair.com/sitemap-0.xml
+
+# Disallow admin and private areas
+Disallow: /api/
+Disallow: /_astro/
+
+# Allow important pages
+Allow: /
+Allow: /servicios/
+Allow: /blog/
+Allow: /nosotros/
+Allow: /contacto/
+Allow: /testimonios/
+
+# Crawl-delay
+Crawl-delay: 1
+

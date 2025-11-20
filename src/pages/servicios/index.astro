@@ -2,9 +2,18 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+
+const pageTitle = "Servicios de Ingeniería del Aire | Seijo Air";
+const pageDescription = "Servicios completos de ingeniería del aire: ventilación industrial, HVAC, refrigeración, purificación, calidad de aire interior. Soluciones integrales en Colombia.";
+const pageKeywords = "servicios ventilación, servicios HVAC, ingeniería del aire, servicios de refrigeración, purificación de aire, Colombia";
 ---
 
-<BaseLayout title="Servicios">
+<BaseLayout 
+	title={pageTitle}
+	description={pageDescription}
+	keywords={pageKeywords}
+	canonical="/servicios"
+>
 	<Header />
 	
 	<section style="background: linear-gradient(135deg, var(--primary-blue) 0%, var(--teal) 100%); color: var(--white); padding: 4rem 0; text-align: center;">

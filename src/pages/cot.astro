@@ -1,0 +1,1172 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const pageTitle = "Cotizador de Mantenimientos | Seijo Air";
+const pageDescription = "Sistema de cotización para mantenimientos de equipos de ventilación y purificación de aire";
+---
+
+<BaseLayout 
+	title={pageTitle}
+	description={pageDescription}
+	canonical="/cot"
+	robots="noindex, nofollow"
+>
+	<Header />
+	
+	<section style="background: linear-gradient(135deg, #1e40af 0%, #0d9488 100%); color: white; padding: 3rem 0;">
+		<div class="container">
+			<h1 style="color: white; margin: 0; font-size: 2.5rem; text-align: center;">Cotizador de Mantenimientos</h1>
+			<p style="color: rgba(255,255,255,0.9); text-align: center; margin-top: 1rem;">Sistema de cálculo de costos para mantenimientos preventivos</p>
+		</div>
+	</section>
+
+	<section style="padding: 3rem 0; background: #f8fafc;">
+		<div class="container">
+			<div id="cotizador-app" style="max-width: 1400px; margin: 0 auto;">
+				<!-- Datos del Cliente -->
+				<div style="background: white; border-radius: 1rem; padding: 2rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-bottom: 2rem;">
+					<h2 style="color: #1e40af; margin-bottom: 1.5rem; border-bottom: 2px solid #e5e7eb; padding-bottom: 0.5rem;">Datos del Cliente</h2>
+					
+					<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+						<div>
+							<label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #374151;">Nombre del Cliente *</label>
+							<input type="text" id="cliente-nombre" placeholder="Nombre o Razón Social" required style="width: 100%; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 0.375rem; font-size: 1rem;">
+						</div>
+						<div>
+							<label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #374151;">Dirección</label>
+							<input type="text" id="cliente-direccion" placeholder="Dirección completa" style="width: 100%; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 0.375rem; font-size: 1rem;">
+						</div>
+						<div>
+							<label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #374151;">Teléfono</label>
+							<input type="tel" id="cliente-telefono" placeholder="Teléfono de contacto" style="width: 100%; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 0.375rem; font-size: 1rem;">
+						</div>
+					</div>
+					
+					<div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 2px solid #e5e7eb;">
+						<h3 style="color: #1e40af; margin-bottom: 1rem; font-size: 1.125rem;">Asesor Comercial</h3>
+						<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+							<div>
+								<label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #374151;">Nombre del Asesor *</label>
+								<input type="text" id="asesor-nombre" placeholder="Nombre del asesor comercial" required style="width: 100%; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 0.375rem; font-size: 1rem;">
+							</div>
+							<div>
+								<label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #374151;">Teléfono del Asesor *</label>
+								<input type="tel" id="asesor-telefono" placeholder="Teléfono del asesor" required style="width: 100%; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 0.375rem; font-size: 1rem;">
+							</div>
+						</div>
+					</div>
+					
+					<div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 2px solid #e5e7eb;">
+						<label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #374151;">Descripción del Servicio *</label>
+						<textarea id="descripcion-servicio" placeholder="Describe el servicio que se va a cotizar..." required rows="4" style="width: 100%; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 0.375rem; font-size: 1rem; font-family: inherit; resize: vertical;">Mantenimiento Preventivo del Sistema de Extracción de Aire de Cocina</textarea>
+					</div>
+				</div>
+
+				<!-- Formulario de Entrada -->
+				<div style="background: white; border-radius: 1rem; padding: 2rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-bottom: 2rem;">
+					<h2 style="color: #1e40af; margin-bottom: 1.5rem; border-bottom: 2px solid #e5e7eb; padding-bottom: 0.5rem;">Datos Iniciales del Proyecto</h2>
+					
+					<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+						<!-- Precipitadores -->
+						<div style="border: 1px solid #e5e7eb; border-radius: 0.5rem; padding: 1.5rem; background: #f9fafb;">
+							<h3 style="color: #1e40af; margin-bottom: 1rem; font-size: 1.25rem;">Precipitadores</h3>
+							<div style="margin-bottom: 1rem;">
+								<label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #374151;">Cantidad de Equipos</label>
+								<input type="number" id="precipitador-cantidad" value="0" min="0" style="width: 100%; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 0.375rem; font-size: 1rem;">
+							</div>
+							<div style="margin-bottom: 1rem;">
+								<label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #374151;">Total Celdas Equivalentes</label>
+								<input type="number" id="precipitador-celdas" value="0" min="0" step="0.01" style="width: 100%; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 0.375rem; font-size: 1rem;">
+							</div>
+							<div style="margin-bottom: 1rem;">
+								<label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #374151;">Frecuencia</label>
+								<select id="precipitador-frecuencia" style="width: 100%; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 0.375rem; font-size: 1rem;">
+									<option value="mensual">Mensual</option>
+									<option value="bimestral">Bimestral</option>
+									<option value="trimestral">Trimestral</option>
+									<option value="semestral" selected>Semestral</option>
+									<option value="anual">Anual</option>
+								</select>
+							</div>
+							<div>
+								<label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #374151;">Tipo de Acceso</label>
+								<select id="precipitador-acceso" style="width: 100%; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 0.375rem; font-size: 1rem;">
+									<option value="sencillo" selected>Sencillo</option>
+									<option value="doble">Doble</option>
+									<option value="triple">Triple</option>
+								</select>
+							</div>
+						</div>
+
+						<!-- Ventiladores -->
+						<div style="border: 1px solid #e5e7eb; border-radius: 0.5rem; padding: 1.5rem; background: #f9fafb;">
+							<h3 style="color: #1e40af; margin-bottom: 1rem; font-size: 1.25rem;">Ventiladores</h3>
+							<div style="margin-bottom: 1rem;">
+								<label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #374151;">Cantidad</label>
+								<input type="number" id="ventilador-cantidad" value="0" min="0" style="width: 100%; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 0.375rem; font-size: 1rem;">
+							</div>
+							<div style="margin-bottom: 1rem;">
+								<label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #374151;">Frecuencia</label>
+								<select id="ventilador-frecuencia" style="width: 100%; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 0.375rem; font-size: 1rem;">
+									<option value="mensual">Mensual</option>
+									<option value="bimestral">Bimestral</option>
+									<option value="trimestral">Trimestral</option>
+									<option value="semestral" selected>Semestral</option>
+									<option value="anual">Anual</option>
+								</select>
+							</div>
+							<div>
+								<label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #374151;">Dificultad</label>
+								<select id="ventilador-dificultad" style="width: 100%; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 0.375rem; font-size: 1rem;">
+									<option value="baja" selected>Baja</option>
+									<option value="media">Media</option>
+									<option value="alta">Alta</option>
+								</select>
+							</div>
+						</div>
+
+						<!-- Campanas -->
+						<div style="border: 1px solid #e5e7eb; border-radius: 0.5rem; padding: 1.5rem; background: #f9fafb;">
+							<h3 style="color: #1e40af; margin-bottom: 1rem; font-size: 1.25rem;">Campanas (2x1x0.6 m)</h3>
+							<div style="margin-bottom: 1rem;">
+								<label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #374151;">Cantidad</label>
+								<input type="number" id="campana-cantidad" value="0" min="0" style="width: 100%; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 0.375rem; font-size: 1rem;">
+							</div>
+							<div style="margin-bottom: 1rem;">
+								<label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #374151;">Frecuencia</label>
+								<select id="campana-frecuencia" style="width: 100%; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 0.375rem; font-size: 1rem;">
+									<option value="mensual">Mensual</option>
+									<option value="bimestral">Bimestral</option>
+									<option value="trimestral">Trimestral</option>
+									<option value="semestral" selected>Semestral</option>
+									<option value="anual">Anual</option>
+								</select>
+							</div>
+							<div>
+								<label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #374151;">Acceso</label>
+								<select id="campana-acceso" style="width: 100%; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 0.375rem; font-size: 1rem;">
+									<option value="sencillo" selected>Sencillo</option>
+									<option value="doble">Doble</option>
+									<option value="triple">Triple</option>
+								</select>
+							</div>
+						</div>
+
+						<!-- Ductos -->
+						<div style="border: 1px solid #e5e7eb; border-radius: 0.5rem; padding: 1.5rem; background: #f9fafb;">
+							<h3 style="color: #1e40af; margin-bottom: 1rem; font-size: 1.25rem;">Ductos (0.35x0.35x2 m)</h3>
+							<div style="margin-bottom: 1rem;">
+								<label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #374151;">Tramos Equivalentes</label>
+								<input type="number" id="ducto-tramos" value="0" min="0" step="0.01" style="width: 100%; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 0.375rem; font-size: 1rem;">
+							</div>
+							<div style="margin-bottom: 1rem;">
+								<label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #374151;">Frecuencia</label>
+								<select id="ducto-frecuencia" style="width: 100%; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 0.375rem; font-size: 1rem;">
+									<option value="mensual">Mensual</option>
+									<option value="bimestral">Bimestral</option>
+									<option value="trimestral">Trimestral</option>
+									<option value="semestral" selected>Semestral</option>
+									<option value="anual">Anual</option>
+								</select>
+							</div>
+							<div>
+								<label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #374151;">Acceso</label>
+								<select id="ducto-acceso" style="width: 100%; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 0.375rem; font-size: 1rem;">
+									<option value="sencillo" selected>Sencillo</option>
+									<option value="doble">Doble</option>
+									<option value="triple">Triple</option>
+								</select>
+							</div>
+						</div>
+
+						<!-- Transporte y Logística -->
+						<div style="border: 1px solid #e5e7eb; border-radius: 0.5rem; padding: 1.5rem; background: #f9fafb;">
+							<h3 style="color: #1e40af; margin-bottom: 1rem; font-size: 1.25rem;">Transporte y Logística</h3>
+							<div style="margin-bottom: 1rem;">
+								<label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #374151;">¿Alquilar Andamio?</label>
+								<select id="alquilar-andamio" style="width: 100%; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 0.375rem; font-size: 1rem;">
+									<option value="no" selected>No</option>
+									<option value="si">Sí</option>
+								</select>
+							</div>
+							<div style="margin-bottom: 1rem;" id="dias-andamio-container" style="display: none;">
+								<label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #374151;">Días de Alquiler</label>
+								<input type="number" id="dias-andamio" value="0" min="0" style="width: 100%; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 0.375rem; font-size: 1rem;">
+							</div>
+							<div style="margin-bottom: 1rem;">
+								<label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #374151;">¿Alquilar Escalera?</label>
+								<select id="alquilar-escalera" style="width: 100%; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 0.375rem; font-size: 1rem;">
+									<option value="no" selected>No</option>
+									<option value="si">Sí</option>
+								</select>
+							</div>
+							<div style="margin-bottom: 1rem;" id="dias-escalera-container" style="display: none;">
+								<label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #374151;">Días de Alquiler</label>
+								<input type="number" id="dias-escalera" value="0" min="0" style="width: 100%; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 0.375rem; font-size: 1rem;">
+							</div>
+							<div>
+								<label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #374151;">Trayectos de Transporte</label>
+								<input type="number" id="trayectos-transporte" value="1" min="1" style="width: 100%; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 0.375rem; font-size: 1rem;">
+							</div>
+						</div>
+
+						<!-- Parámetros de Utilidad -->
+						<div style="border: 1px solid #e5e7eb; border-radius: 0.5rem; padding: 1.5rem; background: #f9fafb;">
+							<h3 style="color: #1e40af; margin-bottom: 1rem; font-size: 1.25rem;">Parámetros de Utilidad</h3>
+							<div style="margin-bottom: 1rem;">
+								<label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #374151;">% Utilidad Precipitador</label>
+								<input type="number" id="utilidad-precipitador" value="25" min="0" max="100" step="0.1" style="width: 100%; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 0.375rem; font-size: 1rem;">
+							</div>
+							<div style="margin-bottom: 1rem;">
+								<label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #374151;">% Utilidad Ventilador</label>
+								<input type="number" id="utilidad-ventilador" value="35" min="0" max="100" step="0.1" style="width: 100%; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 0.375rem; font-size: 1rem;">
+							</div>
+							<div style="margin-bottom: 1rem;">
+								<label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #374151;">% Utilidad Campana</label>
+								<input type="number" id="utilidad-campana" value="30" min="0" max="100" step="0.1" style="width: 100%; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 0.375rem; font-size: 1rem;">
+							</div>
+							<div>
+								<label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #374151;">% Utilidad Ducto</label>
+								<input type="number" id="utilidad-ducto" value="35" min="0" max="100" step="0.1" style="width: 100%; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 0.375rem; font-size: 1rem;">
+							</div>
+						</div>
+					</div>
+
+					<button id="calcular-btn" style="width: 100%; margin-top: 2rem; padding: 1rem; background: #1e40af; color: white; border: none; border-radius: 0.5rem; font-size: 1.125rem; font-weight: 600; cursor: pointer; transition: background 0.3s;">
+						Calcular Cotización
+					</button>
+				</div>
+
+				<!-- Resultados -->
+				<div id="resultados-container" style="display: none;">
+					<!-- Desglose de Costos -->
+					<div style="background: white; border-radius: 1rem; padding: 2rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-bottom: 2rem;">
+						<h2 style="color: #1e40af; margin-bottom: 1.5rem; border-bottom: 2px solid #e5e7eb; padding-bottom: 0.5rem;">Desglose de Costos</h2>
+						
+						<div style="overflow-x: auto;">
+							<table style="width: 100%; border-collapse: collapse;">
+								<thead>
+									<tr style="background: #f3f4f6;">
+										<th style="padding: 1rem; text-align: left; border: 1px solid #e5e7eb; font-weight: 600; color: #374151;">Concepto</th>
+										<th style="padding: 1rem; text-align: right; border: 1px solid #e5e7eb; font-weight: 600; color: #374151;">Cantidad</th>
+										<th style="padding: 1rem; text-align: right; border: 1px solid #e5e7eb; font-weight: 600; color: #374151;">Costo Unitario</th>
+										<th style="padding: 1rem; text-align: right; border: 1px solid #e5e7eb; font-weight: 600; color: #374151;">Costo Total</th>
+										<th style="padding: 1rem; text-align: right; border: 1px solid #e5e7eb; font-weight: 600; color: #374151;">Precio Venta</th>
+										<th style="padding: 1rem; text-align: right; border: 1px solid #e5e7eb; font-weight: 600; color: #374151;">Utilidad</th>
+									</tr>
+								</thead>
+								<tbody id="tabla-costos">
+									<!-- Se llenará dinámicamente -->
+								</tbody>
+							</table>
+						</div>
+					</div>
+
+					<!-- Resumen Final -->
+					<div style="background: linear-gradient(135deg, #1e40af 0%, #0d9488 100%); border-radius: 1rem; padding: 2rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); color: white;">
+						<h2 style="color: white; margin-bottom: 1.5rem; border-bottom: 2px solid rgba(255,255,255,0.3); padding-bottom: 0.5rem;">Resumen de Cotización</h2>
+						
+						<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-bottom: 1.5rem;">
+							<div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 0.5rem;">
+								<div style="font-size: 0.875rem; opacity: 0.9; margin-bottom: 0.5rem;">Subtotal (Sin IVA)</div>
+								<div id="subtotal-sin-iva" style="font-size: 1.5rem; font-weight: 700;">$0</div>
+							</div>
+							<div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 0.5rem;">
+								<div style="font-size: 0.875rem; opacity: 0.9; margin-bottom: 0.5rem;">IVA (19%)</div>
+								<div id="iva-total" style="font-size: 1.5rem; font-weight: 700;">$0</div>
+							</div>
+							<div style="background: rgba(255,255,255,0.2); padding: 1.5rem; border-radius: 0.5rem; border: 2px solid rgba(255,255,255,0.5);">
+								<div style="font-size: 0.875rem; opacity: 0.9; margin-bottom: 0.5rem;">TOTAL CON IVA</div>
+								<div id="total-con-iva" style="font-size: 2rem; font-weight: 700;">$0</div>
+							</div>
+						</div>
+
+						<div style="display: flex; gap: 1rem; margin-top: 2rem;">
+							<button id="exportar-pdf" style="flex: 1; padding: 1rem; background: white; color: #1e40af; border: none; border-radius: 0.5rem; font-size: 1rem; font-weight: 600; cursor: pointer; transition: transform 0.2s;">
+								Exportar PDF
+							</button>
+							<button id="imprimir" style="flex: 1; padding: 1rem; background: rgba(255,255,255,0.2); color: white; border: 2px solid white; border-radius: 0.5rem; font-size: 1rem; font-weight: 600; cursor: pointer; transition: transform 0.2s;">
+								Imprimir
+							</button>
+							<button id="nueva-cotizacion" style="flex: 1; padding: 1rem; background: rgba(255,255,255,0.2); color: white; border: 2px solid white; border-radius: 0.5rem; font-size: 1rem; font-weight: 600; cursor: pointer; transition: transform 0.2s;">
+								Nueva Cotización
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<Footer />
+
+	<script>
+		// Constantes del sistema (basadas en el Excel)
+		const CONSTANTES = {
+			HORAS_LABORALES_DIA: 7.2,
+			IVA: 0.19,
+			FACTOR_IMPREVISTOS: 0.05,
+			DIAS_LABORALES_ANIO: 250,
+			
+			// Costos salariales por hora (COP)
+			COSTO_HORA_OPERARIO: 15000,
+			COSTO_HORA_INGENIERO: 35000,
+			
+			// Costos de insumos por unidad (COP)
+			COSTO_INSUMO_PRECIPITADOR_POR_CELDA: 5000,
+			COSTO_INSUMO_VENTILADOR: 8000,
+			COSTO_INSUMO_CAMPANA: 6000,
+			COSTO_INSUMO_DUCTO_POR_TRAMO: 3000,
+			
+			// Costos de transporte y alquiler (COP)
+			COSTO_ANDAMIO_DIA: 50000,
+			COSTO_ESCALERA_DIA: 20000,
+			COSTO_TRANSPORTE_TRAYECTO: 80000,
+			
+			// Factores de dificultad
+			FACTOR_DIFICULTAD_BAJA: 1.0,
+			FACTOR_DIFICULTAD_MEDIA: 1.2,
+			FACTOR_DIFICULTAD_ALTA: 1.5,
+			
+			// Factores de acceso
+			FACTOR_ACCESO_SENCILLO: 1.0,
+			FACTOR_ACCESO_DOBLE: 1.3,
+			FACTOR_ACCESO_TRIPLE: 1.6
+		};
+
+		// Factores de frecuencia (multiplicador de costos)
+		const FACTORES_FRECUENCIA = {
+			mensual: 12,
+			bimestral: 6,
+			trimestral: 4,
+			semestral: 2,
+			anual: 1
+		};
+
+		// Función para formatear moneda
+		function formatearMoneda(valor) {
+			return new Intl.NumberFormat('es-CO', {
+				style: 'currency',
+				currency: 'COP',
+				minimumFractionDigits: 0,
+				maximumFractionDigits: 0
+			}).format(valor);
+		}
+
+		// Función para obtener valor numérico de input
+		function obtenerValor(id) {
+			const elemento = document.getElementById(id);
+			return elemento ? parseFloat(elemento.value) || 0 : 0;
+		}
+
+		// Función para obtener valor de select
+		function obtenerSelect(id) {
+			const elemento = document.getElementById(id);
+			return elemento ? elemento.value : '';
+		}
+
+		// Cálculo de costos de mano de obra
+		function calcularManoObra(cantidadEquipos, horasPorEquipo, tipoPersonal = 'operario') {
+			const costoHora = tipoPersonal === 'ingeniero' 
+				? CONSTANTES.COSTO_HORA_INGENIERO 
+				: CONSTANTES.COSTO_HORA_OPERARIO;
+			
+			return cantidadEquipos * horasPorEquipo * costoHora;
+		}
+
+		// Cálculo de costos de insumos
+		function calcularInsumos(tipo, cantidad, factorSeguridad = 1.1) {
+			let costoUnitario = 0;
+			
+			switch(tipo) {
+				case 'precipitador':
+					costoUnitario = CONSTANTES.COSTO_INSUMO_PRECIPITADOR_POR_CELDA;
+					break;
+				case 'ventilador':
+					costoUnitario = CONSTANTES.COSTO_INSUMO_VENTILADOR;
+					break;
+				case 'campana':
+					costoUnitario = CONSTANTES.COSTO_INSUMO_CAMPANA;
+					break;
+				case 'ducto':
+					costoUnitario = CONSTANTES.COSTO_INSUMO_DUCTO_POR_TRAMO;
+					break;
+			}
+			
+			return cantidad * costoUnitario * factorSeguridad;
+		}
+
+		// Cálculo de costos de transporte
+		function calcularTransporte() {
+			let total = 0;
+			
+			// Transporte de insumos
+			const trayectos = obtenerValor('trayectos-transporte');
+			total += trayectos * CONSTANTES.COSTO_TRANSPORTE_TRAYECTO;
+			
+			// Alquiler de andamio
+			if (obtenerSelect('alquilar-andamio') === 'si') {
+				const dias = obtenerValor('dias-andamio');
+				total += dias * CONSTANTES.COSTO_ANDAMIO_DIA;
+			}
+			
+			// Alquiler de escalera
+			if (obtenerSelect('alquilar-escalera') === 'si') {
+				const dias = obtenerValor('dias-escalera');
+				total += dias * CONSTANTES.COSTO_ESCALERA_DIA;
+			}
+			
+			return total;
+		}
+
+		// Cálculo principal de cotización
+		function calcularCotizacion() {
+			const resultados = {
+				precipitador: calcularServicio('precipitador'),
+				ventilador: calcularServicio('ventilador'),
+				campana: calcularServicio('campana'),
+				ducto: calcularServicio('ducto'),
+				transporte: calcularTransporte()
+			};
+
+			// Calcular totales
+			let subtotalSinIva = 0;
+			let totalUtilidad = 0;
+			
+			Object.values(resultados).forEach(resultado => {
+				if (resultado && resultado.precioVenta) {
+					subtotalSinIva += resultado.precioVenta;
+					totalUtilidad += resultado.utilidad || 0;
+				}
+			});
+
+			const iva = subtotalSinIva * CONSTANTES.IVA;
+			const totalConIva = subtotalSinIva + iva;
+
+			return {
+				...resultados,
+				subtotalSinIva,
+				iva,
+				totalConIva,
+				totalUtilidad
+			};
+		}
+
+		// Cálculo por tipo de servicio
+		function calcularServicio(tipo) {
+			let cantidad = 0;
+			let frecuencia = '';
+			let acceso = '';
+			let utilidad = 0;
+			let horasManoObra = 0;
+			let cantidadInsumos = 0;
+
+			switch(tipo) {
+				case 'precipitador':
+					cantidad = obtenerValor('precipitador-cantidad');
+					frecuencia = obtenerSelect('precipitador-frecuencia');
+					acceso = obtenerSelect('precipitador-acceso');
+					utilidad = obtenerValor('utilidad-precipitador') / 100;
+					cantidadInsumos = obtenerValor('precipitador-celdas');
+					horasManoObra = 4; // Horas estimadas por precipitador
+					break;
+				case 'ventilador':
+					cantidad = obtenerValor('ventilador-cantidad');
+					frecuencia = obtenerSelect('ventilador-frecuencia');
+					const dificultad = obtenerSelect('ventilador-dificultad');
+					utilidad = obtenerValor('utilidad-ventilador') / 100;
+					cantidadInsumos = cantidad;
+					horasManoObra = 2 * (dificultad === 'baja' ? 1 : dificultad === 'media' ? 1.2 : 1.5);
+					break;
+				case 'campana':
+					cantidad = obtenerValor('campana-cantidad');
+					frecuencia = obtenerSelect('campana-frecuencia');
+					acceso = obtenerSelect('campana-acceso');
+					utilidad = obtenerValor('utilidad-campana') / 100;
+					cantidadInsumos = cantidad;
+					horasManoObra = 1.5;
+					break;
+				case 'ducto':
+					cantidad = obtenerValor('ducto-tramos');
+					frecuencia = obtenerSelect('ducto-frecuencia');
+					acceso = obtenerSelect('ducto-acceso');
+					utilidad = obtenerValor('utilidad-ducto') / 100;
+					cantidadInsumos = cantidad;
+					horasManoObra = 0.5;
+					break;
+			}
+
+			if (cantidad === 0) return null;
+
+			// Factor de frecuencia
+			const factorFrecuencia = FACTORES_FRECUENCIA[frecuencia] || 1;
+			
+			// Factor de acceso
+			let factorAcceso = CONSTANTES.FACTOR_ACCESO_SENCILLO;
+			if (acceso === 'doble') factorAcceso = CONSTANTES.FACTOR_ACCESO_DOBLE;
+			if (acceso === 'triple') factorAcceso = CONSTANTES.FACTOR_ACCESO_TRIPLE;
+
+			// Cálculo de costos
+			const costoManoObra = calcularManoObra(cantidad, horasManoObra, 'operario') * factorFrecuencia * factorAcceso;
+			const costoInsumos = calcularInsumos(tipo, cantidadInsumos) * factorFrecuencia;
+			const costoIngeniero = calcularManoObra(1, horasManoObra * 0.5, 'ingeniero') * factorFrecuencia; // 50% del tiempo del ingeniero
+			
+			// Costo total antes de imprevistos
+			const costoSubtotal = costoManoObra + costoInsumos + costoIngeniero;
+			
+			// Agregar imprevistos (5%)
+			const imprevistos = costoSubtotal * CONSTANTES.FACTOR_IMPREVISTOS;
+			const costoTotal = costoSubtotal + imprevistos;
+
+			// Precio de venta con utilidad
+			const precioVenta = costoTotal / (1 - utilidad);
+			const utilidadCalculada = precioVenta - costoTotal;
+
+			return {
+				tipo,
+				cantidad,
+				costoUnitario: cantidad > 0 ? costoTotal / cantidad : 0,
+				costoTotal,
+				precioVenta,
+				utilidad: utilidadCalculada,
+				porcentajeUtilidad: utilidad * 100,
+				frecuencia
+			};
+		}
+
+		// Función para exportar PDF usando la plantilla
+		async function exportarPDF() {
+			const resultadosContainer = document.getElementById('resultados-container');
+			
+			if (!resultadosContainer || resultadosContainer.style.display === 'none') {
+				alert('Por favor, calcule una cotización primero antes de exportar.');
+				return;
+			}
+
+			// Obtener resultados actuales
+			const resultados = calcularCotizacion();
+
+			// Cargar html2pdf.js dinámicamente
+			let html2pdf;
+			try {
+				html2pdf = (await import('html2pdf.js')).default;
+			} catch (error) {
+				console.error('Error al cargar html2pdf.js:', error);
+				alert('Error al cargar la librería de PDF. Por favor, recargue la página e intente nuevamente.');
+				return;
+			}
+
+			// Obtener la URL base para las imágenes
+			const baseUrl = window.location.origin;
+			
+			// Generar HTML completo con estilos inline
+			const htmlCompleto = generarHTMLCompleto(resultados, baseUrl);
+			
+			// Crear un div temporal para renderizar el contenido
+			const elementoPDF = document.createElement('div');
+			elementoPDF.id = 'pdf-container-temp';
+			elementoPDF.style.position = 'absolute';
+			elementoPDF.style.left = '0';
+			elementoPDF.style.top = '0';
+			elementoPDF.style.width = '794px'; // 210mm en píxeles (210mm * 3.779527559 = 794px)
+			elementoPDF.style.minHeight = '1123px'; // 297mm en píxeles
+			elementoPDF.style.backgroundColor = 'white';
+			elementoPDF.style.padding = '0';
+			elementoPDF.style.margin = '0';
+			elementoPDF.style.overflow = 'visible';
+			
+			// Parsear el HTML y extraer solo el contenido del body
+			const parser = new DOMParser();
+			const doc = parser.parseFromString(htmlCompleto, 'text/html');
+			
+			// Obtener todos los estilos
+			const styles = doc.querySelectorAll('style');
+			styles.forEach(style => {
+				const styleEl = document.createElement('style');
+				styleEl.textContent = style.textContent;
+				elementoPDF.appendChild(styleEl);
+			});
+			
+			// Obtener el contenedor del body
+			const bodyContent = doc.body.querySelector('.container');
+			if (bodyContent) {
+				// Clonar el contenido profundamente
+				const clonedContent = bodyContent.cloneNode(true);
+				elementoPDF.appendChild(clonedContent);
+			} else {
+				// Fallback: usar todo el body
+				const bodyClone = doc.body.cloneNode(true);
+				elementoPDF.appendChild(bodyClone);
+			}
+			
+			// Agregar al body para renderizar
+			document.body.appendChild(elementoPDF);
+			
+			// Esperar a que las imágenes se carguen
+			const imagenes = elementoPDF.querySelectorAll('img');
+			if (imagenes.length > 0) {
+				await Promise.all(
+					Array.from(imagenes).map(img => {
+						if (img.complete) return Promise.resolve();
+						return new Promise((resolve, reject) => {
+							img.onload = resolve;
+							img.onerror = reject;
+							// Timeout de 5 segundos
+							setTimeout(() => reject(new Error('Timeout cargando imagen')), 5000);
+						});
+					})
+				).catch(err => {
+					console.warn('Error cargando imágenes:', err);
+				});
+			}
+			
+			// Forzar reflow y esperar a que se renderice completamente
+			const height = elementoPDF.offsetHeight; // Forzar reflow
+			console.log('Altura del elemento PDF:', height);
+			await new Promise(resolve => setTimeout(resolve, 500));
+			
+			// Verificar que el contenido se renderizó
+			const tieneContenido = elementoPDF.querySelector('.container') !== null;
+			console.log('¿Tiene contenido?', tieneContenido);
+			if (!tieneContenido) {
+				alert('Error: No se pudo renderizar el contenido del PDF. Por favor, intente nuevamente.');
+				document.body.removeChild(elementoPDF);
+				return;
+			}
+			
+			// Configuración del PDF
+			const opciones = {
+				margin: [5, 5, 5, 5],
+				filename: `Cotizacion_SeijoAir_${new Date().toISOString().split('T')[0]}.pdf`,
+				image: { type: 'jpeg', quality: 0.98 },
+				html2canvas: { 
+					scale: 2,
+					useCORS: true,
+					letterRendering: true,
+					backgroundColor: '#ffffff',
+					logging: true,
+					width: elementoPDF.scrollWidth || 794,
+					height: elementoPDF.scrollHeight || 1123,
+					scrollX: 0,
+					scrollY: 0
+				},
+				jsPDF: { 
+					unit: 'mm', 
+					format: 'a4', 
+					orientation: 'portrait',
+					compress: true
+				},
+				pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
+			};
+			
+			// Generar PDF
+			try {
+				await html2pdf()
+					.set(opciones)
+					.from(elementoPDF)
+					.save();
+				
+				// Limpiar elemento temporal
+				if (document.body.contains(elementoPDF)) {
+					document.body.removeChild(elementoPDF);
+				}
+			} catch (error) {
+				console.error('Error al generar PDF:', error);
+				alert('Error al generar el PDF: ' + error.message);
+				if (document.body.contains(elementoPDF)) {
+					document.body.removeChild(elementoPDF);
+				}
+			}
+		}
+
+		// Función para generar HTML completo con estilos
+		function generarHTMLCompleto(resultados, baseUrl = '') {
+			const fecha = new Date().toLocaleDateString('es-CO', {
+				year: 'numeric',
+				month: 'long',
+				day: 'numeric'
+			});
+
+			// Obtener datos del cliente
+			const clienteNombre = document.getElementById('cliente-nombre')?.value || '[Nombre del Cliente]';
+			const clienteDireccion = document.getElementById('cliente-direccion')?.value || '[Dirección]';
+			const clienteTelefono = document.getElementById('cliente-telefono')?.value || '[Teléfono]';
+			
+			// Obtener datos del asesor comercial
+			const asesorNombre = document.getElementById('asesor-nombre')?.value || 'Jairo Perez';
+			const asesorTelefono = document.getElementById('asesor-telefono')?.value || '323 2925373';
+			
+			// Obtener descripción del servicio
+			const descripcionServicio = document.getElementById('descripcion-servicio')?.value || 'Mantenimiento Preventivo del Sistema de Extracción de Aire de Cocina';
+
+			// Generar filas de la tabla
+			let filasTabla = '';
+			const servicios = ['precipitador', 'ventilador', 'campana', 'ducto'];
+			const nombresServicios = {
+				precipitador: 'Mantenimiento Precipitador',
+				ventilador: 'Mantenimiento Ventilador',
+				campana: 'Mantenimiento Campana',
+				ducto: 'Mantenimiento Ducto'
+			};
+
+			servicios.forEach(servicio => {
+				const resultado = resultados[servicio];
+				if (resultado && resultado.cantidad > 0) {
+					const precioUnitario = resultado.cantidad > 0 ? resultado.precioVenta / resultado.cantidad : 0;
+					filasTabla += `
+						<tr>
+							<td>${nombresServicios[servicio]}</td>
+							<td style="text-align: center;">${resultado.cantidad.toLocaleString('es-CO')}</td>
+							<td style="text-align: right;">${formatearMoneda(precioUnitario)}</td>
+							<td style="text-align: right;">${formatearMoneda(resultado.precioVenta)}</td>
+						</tr>
+					`;
+				}
+			});
+
+			if (resultados.transporte > 0) {
+				filasTabla += `
+					<tr>
+						<td>Transporte y Logística</td>
+						<td style="text-align: center;">-</td>
+						<td style="text-align: right;">-</td>
+						<td style="text-align: right;">${formatearMoneda(resultados.transporte)}</td>
+					</tr>
+				`;
+			}
+
+			// Generar lista de servicios incluidos
+			let serviciosIncluidos = '';
+			const nombres = {
+				precipitador: 'Precipitador',
+				ventilador: 'Ventilador',
+				campana: 'Campana',
+				ducto: 'Ducto (parte accesible)'
+			};
+			
+			servicios.forEach(servicio => {
+				if (resultados[servicio] && resultados[servicio].cantidad > 0) {
+					serviciosIncluidos += `<li>${nombres[servicio]}</li>`;
+				}
+			});
+
+			// Calcular totales
+			const subtotalConTransporte = resultados.subtotalSinIva + resultados.transporte;
+			const ivaConTransporte = subtotalConTransporte * CONSTANTES.IVA;
+			const totalFinal = subtotalConTransporte + ivaConTransporte;
+
+			// Retornar HTML completo
+			return `<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Cotización - Seijo Air</title>
+	<style>
+		* { margin: 0; padding: 0; box-sizing: border-box; }
+		body { 
+			font-family: Arial, sans-serif; 
+			background: white; 
+			color: #374151; 
+			font-size: 12pt;
+			padding: 0;
+			margin: 0;
+		}
+		.container { 
+			max-width: 100%; 
+			width: 100%;
+			margin: 0; 
+			background: white; 
+			padding: 10mm;
+			min-height: 297mm;
+		}
+		.pdf-header-image {
+			width: 100%;
+			max-width: 100%;
+			height: auto;
+			margin-bottom: 15px;
+			display: block;
+		}
+		.header { 
+			border-bottom: 3px solid #1e40af; 
+			padding: 15px 0; 
+			margin-bottom: 20px; 
+			display: flex;
+			align-items: center;
+			gap: 30px;
+		}
+		.header-logo {
+			height: 150px;
+			width: auto;
+			object-fit: contain;
+			max-width: 400px;
+		}
+		.header-content {
+			flex: 1;
+		}
+		.header h2 { 
+			color: #374151; 
+			font-size: 20pt; 
+			font-weight: 600; 
+			margin-bottom: 10px; 
+		}
+		.pdf-footer-image {
+			width: 100%;
+			max-width: 100%;
+			height: auto;
+			margin-top: 30px;
+			display: block;
+		}
+		.header-info { 
+			display: flex; 
+			justify-content: space-between; 
+			margin-top: 15px; 
+			font-size: 10pt; 
+			color: #6b7280; 
+		}
+		.client-section { 
+			margin-bottom: 15px; 
+			padding: 15px; 
+			background: #f9fafb; 
+			border-left: 4px solid #1e40af; 
+		}
+		.client-section h3 { 
+			color: #1e40af; 
+			font-size: 14pt; 
+			margin-bottom: 10px; 
+			font-weight: bold; 
+		}
+		.client-section p { 
+			margin: 5px 0; 
+			font-size: 11pt; 
+			color: #374151; 
+		}
+		.service-description { 
+			margin: 0 0 10px 0; 
+			padding: 15px; 
+			background: #f0f9ff; 
+			border-radius: 5px; 
+			border-left: 4px solid #1e40af;
+		}
+		.service-description h3 { 
+			color: #1e40af; 
+			font-size: 13pt; 
+			margin-bottom: 8px; 
+			font-weight: 600;
+		}
+		.service-description p { 
+			color: #374151; 
+			font-size: 11pt; 
+			line-height: 1.6;
+			margin-bottom: 8px;
+		}
+		.service-description ul { 
+			margin-left: 20px; 
+			margin-top: 8px;
+			color: #374151; 
+		}
+		.service-description li { 
+			margin: 4px 0; 
+			font-size: 11pt; 
+		}
+		table { 
+			width: 100%; 
+			border-collapse: collapse; 
+			margin: 10px 0 20px 0; 
+			font-size: 11pt; 
+		}
+		th { 
+			background: #1e40af; 
+			color: white; 
+			padding: 12px; 
+			text-align: left; 
+			font-weight: bold; 
+			border: 1px solid #1e3a8a; 
+		}
+		td { 
+			padding: 10px 12px; 
+			border: 1px solid #e5e7eb; 
+			color: #374151; 
+		}
+		tr:nth-child(even) { 
+			background: #f9fafb; 
+		}
+		.totals-section { 
+			margin-top: 25px; 
+			margin-left: auto; 
+			width: 300px; 
+		}
+		.totals-row { 
+			display: flex; 
+			justify-content: space-between; 
+			padding: 8px 0; 
+			border-bottom: 1px solid #e5e7eb; 
+			font-size: 11pt; 
+		}
+		.totals-row.total { 
+			border-top: 2px solid #1e40af; 
+			border-bottom: 2px solid #1e40af; 
+			font-weight: bold; 
+			font-size: 14pt; 
+			padding: 12px 0; 
+			margin-top: 5px; 
+			color: #1e40af; 
+		}
+		.totals-label { 
+			color: #6b7280; 
+		}
+		.totals-value { 
+			font-weight: 600; 
+			color: #374151; 
+		}
+		.payment-info { 
+			margin-top: 30px; 
+			padding: 15px; 
+			background: #fef3c7; 
+			border-left: 4px solid #f59e0b; 
+			border-radius: 5px; 
+		}
+		.payment-info p { 
+			margin: 5px 0; 
+			font-size: 11pt; 
+			color: #92400e; 
+		}
+		.validity-note { 
+			margin-top: 20px; 
+			padding: 10px; 
+			background: #fee2e2; 
+			border-left: 4px solid #ef4444; 
+			border-radius: 5px; 
+			font-size: 10pt; 
+			color: #991b1b; 
+		}
+		.footer { 
+			margin-top: 40px; 
+			padding-top: 20px; 
+			border-top: 2px solid #e5e7eb; 
+		}
+		.footer-section { 
+			margin-bottom: 15px; 
+		}
+		.footer-section h4 { 
+			color: #1e40af; 
+			font-size: 12pt; 
+			margin-bottom: 5px; 
+		}
+		.footer-section p { 
+			font-size: 10pt; 
+			color: #6b7280; 
+			margin: 3px 0; 
+		}
+		.signature { 
+			margin-top: 40px; 
+			text-align: right; 
+		}
+		.signature p { 
+			margin: 5px 0; 
+			font-size: 11pt; 
+			color: #374151; 
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<img src="${baseUrl}/encabezado.PNG" alt="Encabezado" class="pdf-header-image" />
+		
+		<div class="header">
+			<img src="${baseUrl}/seijo air.png" alt="Seijo Air Logo" class="header-logo" />
+			<div class="header-content">
+				<h2>Cotización de Mantenimientos</h2>
+				<div class="header-info">
+					<span>Fecha: <strong>${fecha}</strong></span>
+					<span>Validez: 30 días</span>
+				</div>
+			</div>
+		</div>
+		
+		<div class="client-section">
+			<h3>DATOS DEL CLIENTE</h3>
+			<p><strong>Nombre:</strong> <span>${clienteNombre}</span></p>
+			<p><strong>Dirección:</strong> <span>${clienteDireccion}</span></p>
+			<p><strong>Teléfono:</strong> <span>${clienteTelefono}</span></p>
+		</div>
+		
+		<div class="service-description">
+			<h3>Descripción del Servicio</h3>
+			<p>${descripcionServicio}</p>
+			<p style="margin-top: 10px; margin-bottom: 8px; font-weight: 600;">Incluye:</p>
+			<ul>
+				${serviciosIncluidos}
+			</ul>
+		</div>
+		
+		<table>
+			<thead>
+				<tr>
+					<th>Concepto</th>
+					<th style="text-align: center;">Cantidad</th>
+					<th style="text-align: right;">Precio Unitario</th>
+					<th style="text-align: right;">Total</th>
+				</tr>
+			</thead>
+			<tbody>
+				${filasTabla}
+			</tbody>
+		</table>
+		
+		<div class="totals-section">
+			<div class="totals-row">
+				<span class="totals-label">Subtotal:</span>
+				<span class="totals-value">${formatearMoneda(subtotalConTransporte)}</span>
+			</div>
+			<div class="totals-row">
+				<span class="totals-label">IVA (19%):</span>
+				<span class="totals-value">${formatearMoneda(ivaConTransporte)}</span>
+			</div>
+			<div class="totals-row total">
+				<span>TOTAL:</span>
+				<span>${formatearMoneda(totalFinal)}</span>
+			</div>
+		</div>
+		
+		<div class="payment-info">
+			<p><strong>Forma de pago:</strong> 50% Anticipo - 50% Contraentrega</p>
+		</div>
+		
+		<div class="validity-note">
+			<p><strong>Nota:</strong> Esta cotización tiene validez por 30 días calendario.</p>
+		</div>
+		
+		<div class="footer">
+			<div class="footer-section">
+				<h4>Ejecutivo Comercial</h4>
+				<p>${asesorNombre}</p>
+				<p>Tel: ${asesorTelefono}</p>
+			</div>
+			
+			<div class="signature">
+				<p>Atentamente,</p>
+				<p style="margin-top: 30px;"><strong>Seijo Air</strong></p>
+				<p>Ingeniería en el Aire</p>
+			</div>
+		</div>
+		
+		<img src="${baseUrl}/pie de pagina.PNG" alt="Pie de página" class="pdf-footer-image" />
+	</div>
+</body>
+</html>`;
+		}
+
+		// Mostrar resultados
+		function mostrarResultados(resultados) {
+			const container = document.getElementById('resultados-container');
+			const tabla = document.getElementById('tabla-costos');
+			
+			// Limpiar tabla
+			tabla.innerHTML = '';
+
+			// Agregar filas de servicios
+			const servicios = ['precipitador', 'ventilador', 'campana', 'ducto'];
+			const nombresServicios = {
+				precipitador: 'Precipitador',
+				ventilador: 'Ventilador',
+				campana: 'Campana',
+				ducto: 'Ducto'
+			};
+
+			servicios.forEach(servicio => {
+				const resultado = resultados[servicio];
+				if (resultado && resultado.cantidad > 0) {
+					const fila = document.createElement('tr');
+					fila.innerHTML = `
+						<td style="padding: 1rem; border: 1px solid #e5e7eb;">${nombresServicios[servicio]}</td>
+						<td style="padding: 1rem; border: 1px solid #e5e7eb; text-align: right;">${resultado.cantidad.toLocaleString('es-CO')}</td>
+						<td style="padding: 1rem; border: 1px solid #e5e7eb; text-align: right;">${formatearMoneda(resultado.costoUnitario)}</td>
+						<td style="padding: 1rem; border: 1px solid #e5e7eb; text-align: right;">${formatearMoneda(resultado.costoTotal)}</td>
+						<td style="padding: 1rem; border: 1px solid #e5e7eb; text-align: right; font-weight: 600;">${formatearMoneda(resultado.precioVenta)}</td>
+						<td style="padding: 1rem; border: 1px solid #e5e7eb; text-align: right; color: #059669;">${formatearMoneda(resultado.utilidad)} (${resultado.porcentajeUtilidad.toFixed(1)}%)</td>
+					`;
+					tabla.appendChild(fila);
+				}
+			});
+
+			// Agregar transporte si aplica
+			if (resultados.transporte > 0) {
+				const fila = document.createElement('tr');
+				fila.innerHTML = `
+					<td style="padding: 1rem; border: 1px solid #e5e7eb;">Transporte y Logística</td>
+					<td style="padding: 1rem; border: 1px solid #e5e7eb; text-align: right;">-</td>
+					<td style="padding: 1rem; border: 1px solid #e5e7eb; text-align: right;">-</td>
+					<td style="padding: 1rem; border: 1px solid #e5e7eb; text-align: right;">${formatearMoneda(resultados.transporte)}</td>
+					<td style="padding: 1rem; border: 1px solid #e5e7eb; text-align: right; font-weight: 600;">${formatearMoneda(resultados.transporte)}</td>
+					<td style="padding: 1rem; border: 1px solid #e5e7eb; text-align: right;">-</td>
+				`;
+				tabla.appendChild(fila);
+			}
+
+			// Calcular totales incluyendo transporte
+			const subtotalConTransporte = resultados.subtotalSinIva + resultados.transporte;
+			const ivaConTransporte = subtotalConTransporte * CONSTANTES.IVA;
+			const totalFinal = subtotalConTransporte + ivaConTransporte;
+
+			// Actualizar totales
+			document.getElementById('subtotal-sin-iva').textContent = formatearMoneda(subtotalConTransporte);
+			document.getElementById('iva-total').textContent = formatearMoneda(ivaConTransporte);
+			document.getElementById('total-con-iva').textContent = formatearMoneda(totalFinal);
+
+			// Mostrar contenedor
+			container.style.display = 'block';
+			container.scrollIntoView({ behavior: 'smooth' });
+		}
+
+		// Event listeners
+		document.addEventListener('DOMContentLoaded', function() {
+			// Botón calcular
+			document.getElementById('calcular-btn').addEventListener('click', function() {
+				const resultados = calcularCotizacion();
+				mostrarResultados(resultados);
+			});
+
+			// Mostrar/ocultar campos de alquiler
+			document.getElementById('alquilar-andamio').addEventListener('change', function() {
+				const container = document.getElementById('dias-andamio-container');
+				container.style.display = this.value === 'si' ? 'block' : 'none';
+			});
+
+			document.getElementById('alquilar-escalera').addEventListener('change', function() {
+				const container = document.getElementById('dias-escalera-container');
+				container.style.display = this.value === 'si' ? 'block' : 'none';
+			});
+
+			// Botón imprimir
+			document.getElementById('imprimir')?.addEventListener('click', function() {
+				window.print();
+			});
+
+			// Botón nueva cotización
+			document.getElementById('nueva-cotizacion')?.addEventListener('click', function() {
+				location.reload();
+			});
+
+			// Botón exportar PDF
+			document.getElementById('exportar-pdf')?.addEventListener('click', function() {
+				exportarPDF();
+			});
+		});
+	</script>
+
+	<style>
+		@media print {
+			Header, Footer, #calcular-btn, #exportar-pdf, #imprimir, #nueva-cotizacion {
+				display: none !important;
+			}
+			
+			#cotizador-app {
+				max-width: 100% !important;
+			}
+		}
+	</style>
+</BaseLayout>
+

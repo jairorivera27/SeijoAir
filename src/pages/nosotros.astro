@@ -2,9 +2,18 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+
+const pageTitle = "Nosotros | Seijo Air - Expertos en Ingeniería del Aire";
+const pageDescription = "Conozca Seijo Air: más de 15 años de experiencia en ingeniería del aire en Colombia. Misión, visión, valores y compromiso con la excelencia en ventilación, HVAC y purificación.";
+const pageKeywords = "Seijo Air, empresa de ventilación, ingeniería del aire Colombia, experiencia en HVAC, certificaciones, valores empresariales";
 ---
 
-<BaseLayout title="Nosotros">
+<BaseLayout 
+	title={pageTitle}
+	description={pageDescription}
+	keywords={pageKeywords}
+	canonical="/nosotros"
+>
 	<Header />
 	
 	<section style="background: linear-gradient(135deg, var(--primary-blue) 0%, var(--teal) 100%); color: var(--white); padding: 4rem 0;">

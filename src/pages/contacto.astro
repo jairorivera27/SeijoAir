@@ -2,9 +2,18 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+
+const pageTitle = "Contacto | Seijo Air - Cotización y Consultoría";
+const pageDescription = "Contacte a Seijo Air para cotizaciones y consultoría en ingeniería del aire. Teléfono, email y formulario de contacto. Atención en toda Colombia.";
+const pageKeywords = "contacto Seijo Air, cotización ventilación, consultoría HVAC, teléfono, email, Colombia";
 ---
 
-<BaseLayout title="Contacto">
+<BaseLayout 
+	title={pageTitle}
+	description={pageDescription}
+	keywords={pageKeywords}
+	canonical="/contacto"
+>
 	<Header />
 	
 	<section style="background: linear-gradient(135deg, var(--primary-blue) 0%, var(--teal) 100%); color: var(--white); padding: 4rem 0;">
